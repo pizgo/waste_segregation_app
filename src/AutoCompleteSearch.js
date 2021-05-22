@@ -62,13 +62,13 @@ const AutoCompleteSearch = () => {
 
     return (
         <section className="search">
-            <h1>Search {searchTerm.length ? `results for: ${searchTerm}` : null}</h1>
-            <input type="text" placeholder="Search for tutorials..." onKeyUp={updateSearch} />
+            <h1>Co chcesz dziś wyrzucić?</h1>
+            <input type="text" placeholder="Tu wpisz, co chcesz wyrzucić" onKeyUp={updateSearch} />
             <ul className="search-suggestions">
-                {(!displayResults && searchTerm) && <li key="-1" className={focusIndex === -1 ? 'active' : null}>{`Search for ${searchTerm}`}</li>}
+                {(!displayResults && searchTerm) && <li key="-1" className={focusIndex === -1 ? 'active' : null}></li>}
                 {!displayResults && filteredResults.map((item, index) => (
                     <li key={index} className={focusIndex === index ? 'active' : null}>
-                            SUGGESTION {item.title}
+                             {item.title}
                     </li>
                 ))}
             </ul>
