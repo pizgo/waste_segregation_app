@@ -13,8 +13,6 @@ const AutoCompleteSearch = () => {
     useEffect(() => {
         const getSearchResults = async () => {
             const searchResultsResponse = await getMockData();
-            console.log(searchResultsResponse);
-
             updateSearchResults(searchResultsResponse);
         };
 
@@ -23,11 +21,13 @@ const AutoCompleteSearch = () => {
 
     const updateSearch = e => {
         updateSearchTerm(e.target.value);
-        updateFilteredResults(searchResults.filter(result => result.title.match(new RegExp(e.target.value, 'gi'))))
+        let newFilteredResults = searchResults.filter(result => result.title.match(new RegExp(e.target.value, 'gi')))
+        updateFilteredResults(newFilteredResults)
     };
 
 // KOMPONENET SEARCHRESULTS
     const SearchResults = () => {
+
         const Message = ({ text }) => (
             <div className="message">
                 <h2>{text}</h2>
@@ -47,10 +47,15 @@ const AutoCompleteSearch = () => {
             return <Message text="We couldn't find anything for your search term." />
         }
 
+        function handleSuggestClick(index) {
+            console.log("click!")
+            console.log(filteredResults[index])
+        }
+
         return (
             <ul className="search-results">
                 {filteredResults.map((item, index) => (
-                    <li key={index}>
+                    <li key={index} onClick={() => handleSuggestClick(index)}>
                         ARTICLE: {item.title}
                     </li>
                 ))}
@@ -64,15 +69,16 @@ const AutoCompleteSearch = () => {
         <section className="search">
             <h1>Co chcesz dziś wyrzucić?</h1>
             <input type="text" placeholder="Tu wpisz, co chcesz wyrzucić" onKeyUp={updateSearch} />
-            <ul className="search-suggestions">
+         {/*   <ul className="search-suggestions">
                 {(!displayResults && searchTerm) && <li key="-1" className={focusIndex === -1 ? 'active' : null}></li>}
                 {!displayResults && filteredResults.map((item, index) => (
                     <li key={index} className={focusIndex === index ? 'active' : null}>
                              {item.title}
                     </li>
                 ))}
-            </ul>
-            {/*<SearchResults/>*/}
+            </ul>*/}
+            <SearchResults/>
+
         </section>
     );
 }
