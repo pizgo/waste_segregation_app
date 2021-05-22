@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import getMockData from "./MockData";
+import GarbageResult from "./GarbageResult";
 
 
 
@@ -7,6 +8,7 @@ const AutoCompleteSearch = () => {
     const [searchTerm, updateSearchTerm] = useState('');
     const [searchResults, updateSearchResults] = useState([]);
     const [filteredResults, updateFilteredResults] = useState([]);
+    const [selectedResult, updateSelectedResult] = useState(null)
     const [displayResults, updateDisplayResults] = useState(false);
     const [focusIndex, updateFocusIndex] = useState(-1);
 
@@ -20,13 +22,14 @@ const AutoCompleteSearch = () => {
     }, []);
 
     const updateSearch = e => {
+        updateSelectedResult(null)
         updateSearchTerm(e.target.value);
         let newFilteredResults = searchResults.filter(result => result.title.match(new RegExp(e.target.value, 'gi')))
         updateFilteredResults(newFilteredResults)
     };
 
 // KOMPONENET SEARCHRESULTS
-    const SearchResults = () => {
+    const SearchSuggestions = (props) => {
 
         const Message = ({ text }) => (
             <div className="message">
@@ -49,7 +52,8 @@ const AutoCompleteSearch = () => {
 
         function handleSuggestClick(index) {
             console.log("click!")
-            console.log(filteredResults[index])
+            const clickedItem = filteredResults[index]
+            updateSelectedResult( clickedItem )
         }
 
         return (
@@ -69,16 +73,10 @@ const AutoCompleteSearch = () => {
         <section className="search">
             <h1>Co chcesz dziś wyrzucić?</h1>
             <input type="text" placeholder="Tu wpisz, co chcesz wyrzucić" onKeyUp={updateSearch} />
-         {/*   <ul className="search-suggestions">
-                {(!displayResults && searchTerm) && <li key="-1" className={focusIndex === -1 ? 'active' : null}></li>}
-                {!displayResults && filteredResults.map((item, index) => (
-                    <li key={index} className={focusIndex === index ? 'active' : null}>
-                             {item.title}
-                    </li>
-                ))}
-            </ul>*/}
-            <SearchResults/>
-
+            <SearchSuggestions/>
+            {
+                selectedResult ? <h1> Clicked: { selectedResult.title } wyrzuć do {selectedResult.garbage}</h1> : null
+            }
         </section>
     );
 }

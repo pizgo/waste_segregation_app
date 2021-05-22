@@ -2,6 +2,7 @@ import React from 'react';
 import {Header} from "./Header";
 import {SearchForm} from "./SearchForm";
 import AutoCompleteSearch from "./AutoCompleteSearch";
+import GarbageResult from "./GarbageResult";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <Header/>
       {/*<SearchForm/>*/}
       <AutoCompleteSearch/>
+
      </>
   )
 }

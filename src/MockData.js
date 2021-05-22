@@ -1,12 +1,17 @@
 const getMockData = () => [
     {
-        title: 'How to Improve Data Fetching in React With Suspense'
+        title: 'How to Improve Data Fetching in React With Suspense',
+        garbage: "A"
     },
     {
-        title: 'Pizgi'
+        title: 'Pizgi',
+        garbage: "B"
+
     },
     {
-        title: 'Slizgi'
+        title: 'Slizgi',
+        garbage: "C"
+
     },
 ];
 
