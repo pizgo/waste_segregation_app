@@ -1,15 +1,13 @@
 import React from 'react';
 import {Header} from "./Header";
-import {SearchForm} from "./SearchForm";
-import AutoCompleteSearch from "./AutoCompleteSearch";
-import GarbageResult from "./GarbageResult";
+import SearchForm from "./SearchForm";
+
 
 const App = () => {
   return (
      <>
       <Header/>
-      {/*<SearchForm/>*/}
-      <AutoCompleteSearch/>
+      <SearchForm/>
 
      </>
   )

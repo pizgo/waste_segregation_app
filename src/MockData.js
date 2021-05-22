@@ -4,7 +4,7 @@ const getMockData = () => [
         garbage: "A"
     },
     {
-        title: 'Pizgi',
+        title: 'Pizsgi',
         garbage: "B"
 
     },
