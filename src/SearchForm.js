@@ -27,58 +27,40 @@ const SearchForm = () => {
 
     };
 
-// KOMPONENET SEARCHRESULTS
-    const SearchSuggestions = (props) => {
+    // if (!searchResults.length) {
+    //     return <Message text="Loading search results" />
+    // }
+    //
+    // if (!searchTerm) {
+    //     return <Message text="Try to search for something..." />
+    // }
 
-        const Message = ({ text }) => (
-            <div className="message">
-                <h2>{text}</h2>
-                <hr />
-            </div>
-        );
+    function handleSuggestClick(index) {
+        console.log("click!")
+        const clickedItem = filteredResults[index];
+        SetSelectedResult(clickedItem);
+        const clearInput = (e) => {
+            e.target.value = "";
+        };
 
-        // if (!searchResults.length) {
-        //     return <Message text="Loading search results" />
-        // }
-        //
-        // if (!searchTerm) {
-        //     return <Message text="Try to search for something..." />
-        // }
-
-        if (!filteredResults.length && searchTerm) {
-            return <Message text="Brak wyników wyszukiwania" />
-        }
-
-        function handleSuggestClick(index) {
-            console.log("click!")
-            const clickedItem = filteredResults[index];
-            SetSelectedResult(clickedItem);
-            setSearchTerm("");
-            
-        }
-
-        return (
-            <ul className="search-results">
-                {filteredResults.map((item, index) => (
-                    <li key={index} onClick={() => handleSuggestClick(index)}>
-                        {item.title}
-                    </li>
-                ))}
-            </ul>
-        );
-    };
-
-//warunki: jeśli nie ma searchTerm, to li się nie wyświetlają
-//         po kliknięciu zeruje się searchTerm i nie wyświetla się lista
+    }
 
     return (
         <section className="search">
-            <h1>Co chcesz dziś wyrzucić?</h1>
-            <input type="text" placeholder="Tu wpisz, co chcesz wyrzucić" onChange={updateSearch} />
-            <SearchSuggestions/>
-            {
-                selectedResult ? <h2>  { selectedResult.title } wyrzuć do {selectedResult.garbage}</h2> : null
-            }
+            <div className="search__container">
+                    <p className="search__hello">Co chcesz dziś wyrzucić?</p>
+                    <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić" onChange={updateSearch} />
+
+                    <ul className="search__list" style={{display: (selectedResult || !searchTerm || (!filteredResults.length && searchTerm)) ? 'none' : 'block'}}>
+                        {filteredResults.map((item, index) => (
+                            <li className="search__list-element" key={index} onClick={() => handleSuggestClick(index)}>
+                                {item.title}
+                            </li>
+                        ))}
+                    </ul>
+                    {selectedResult ? <p className="search__result">  { selectedResult.title } wyrzuć do {selectedResult.garbage}</p> : null}
+                    {(!filteredResults.length && searchTerm) && <p> Brak wyników wyszukiwania</p>}
+            </div>
         </section>
     );
 }

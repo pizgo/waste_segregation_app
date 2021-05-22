@@ -1,0 +1,45 @@
+@import "font";
+@import "colors";
+
+.newsletter {
+  max-width: 100%;
+  background-color: $color-navigation;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1440px;
+    margin: 0 auto;
+    padding: 50px;
+  }
+
+  &__text {
+    color: $color-bg;
+    font-family: $text-fonts;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: flex-start;
+    width: 30%;
+  }
+
+  &__form-input {
+    height: 40px;
+    border: none;
+    width: 200px;
+    margin-left: 15px;
+  }
+
+  &__form-btn {
+    width: 100px;
+    background-color: $color-btn;
+    font-family: $text-fonts;
+    color: $color-bg;
+    border: none;
+  }
+}

@@ -3,7 +3,7 @@
 @import "Mixins";
 
 .header {
-  height: 60px;
+  height: 80px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16);
   background-color: darkgreen;
 
@@ -12,14 +12,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 100px;
+    margin-right: 30px;
+
+    @include tablet {
+      margin-left: 25px;
+    }
+
   }
 
-  .logo {
+  &__logo {
     font-family: $logo;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: white;
-    //font-weight: 200;
-    padding-left: 100px;
     text-decoration: none;
 
     @include tablet {
@@ -34,15 +39,15 @@
       padding: 0 26px;
       list-style-type: none;
 
-      &:last-child {
-        padding-right: 0;
+      @include tablet {
+        padding: 0px;
       }
     }
 
     &__link {
       font-family: $text;
       color: $white;
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: bold;
       letter-spacing: 0.1875rem;
       padding: 15px 20px 25px;
@@ -143,6 +148,7 @@
 
     @include mobile {
       display: block;
+      margin-right: 10px;
     }
   }
 }
