@@ -4,9 +4,11 @@ import getMockData from "./MockData";
 
 
 const AutoCompleteSearch = () => {
-    const [searchTerm, updateSearchTerm] = useState('dupa');
+    const [searchTerm, updateSearchTerm] = useState('');
     const [searchResults, updateSearchResults] = useState([]);
     const [filteredResults, updateFilteredResults] = useState([]);
+    const [displayResults, updateDisplayResults] = useState(false);
+    const [focusIndex, updateFocusIndex] = useState(-1);
 
     useEffect(() => {
         const getSearchResults = async () => {
@@ -49,7 +51,7 @@ const AutoCompleteSearch = () => {
             <ul className="search-results">
                 {filteredResults.map((item, index) => (
                     <li key={index}>
-                        {item.title}
+                        ARTICLE: {item.title}
                     </li>
                 ))}
             </ul>
@@ -62,7 +64,15 @@ const AutoCompleteSearch = () => {
         <section className="search">
             <h1>Search {searchTerm.length ? `results for: ${searchTerm}` : null}</h1>
             <input type="text" placeholder="Search for tutorials..." onKeyUp={updateSearch} />
-            <SearchResults/>
+            <ul className="search-suggestions">
+                {(!displayResults && searchTerm) && <li key="-1" className={focusIndex === -1 ? 'active' : null}>{`Search for ${searchTerm}`}</li>}
+                {!displayResults && filteredResults.map((item, index) => (
+                    <li key={index} className={focusIndex === index ? 'active' : null}>
+                            SUGGESTION {item.title}
+                    </li>
+                ))}
+            </ul>
+            {/*<SearchResults/>*/}
         </section>
     );
 }
