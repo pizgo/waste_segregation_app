@@ -27,22 +27,11 @@ const SearchForm = () => {
 
     };
 
-    // if (!searchResults.length) {
-    //     return <Message text="Loading search results" />
-    // }
-    //
-    // if (!searchTerm) {
-    //     return <Message text="Try to search for something..." />
-    // }
 
     function handleSuggestClick(index) {
         console.log("click!")
         const clickedItem = filteredResults[index];
         SetSelectedResult(clickedItem);
-        const clearInput = (e) => {
-            e.target.value = "";
-        };
-
     }
 
     return (
@@ -58,8 +47,11 @@ const SearchForm = () => {
                             </li>
                         ))}
                     </ul>
-                    {selectedResult ? <p className="search__result">  { selectedResult.title } wyrzuć do {selectedResult.garbage}</p> : null}
-                    {(!filteredResults.length && searchTerm) && <p> Brak wyników wyszukiwania</p>}
+                    {selectedResult ? <p className="search__result">
+                        <span>{ selectedResult.title }: </span>wyrzuć do {selectedResult.garbage}.
+                    </p> : null}
+                    {(!filteredResults.length && searchTerm) && <p className="search__result-false"> Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę? Kliknij tutaj
+                    </p>}
             </div>
         </section>
     );
