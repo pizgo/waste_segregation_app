@@ -50,7 +50,7 @@ const SearchForm = () => {
                     {selectedResult ? <p className="search__result">
                         <span>{ selectedResult.title }: </span>wyrzuć do {selectedResult.garbage}.
                     </p> : null}
-                    {(!filteredResults.length && searchTerm) && <p className="search__result-false"> Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę? Kliknij tutaj
+                    {(!filteredResults.length && searchTerm) && <p className="search__result-false"> Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę? Kliknij tutaj.
                     </p>}
             </div>
         </section>
