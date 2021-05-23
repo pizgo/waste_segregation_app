@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import getMockData from "./MockData";
+import {getMockData} from "./MockData";
+import {getBinDict} from "./MockData";
 
 
 
@@ -13,6 +14,7 @@ const SearchForm = () => {
     //useEffecy do pobierania danych
     useEffect(() => {
         const getSearchResults = async () => {
+            console.log("updating results from [mock] DB?")
             const searchResultsResponse = await getMockData();
             setSearchResults(searchResultsResponse);
         };
@@ -24,7 +26,6 @@ const SearchForm = () => {
         setSearchTerm(e.target.value);
         let newFilteredResults = searchResults.filter(result => result.title.match(new RegExp(e.target.value, 'gi')))
         setFilteredResults(newFilteredResults)
-
     };
 
 
@@ -48,7 +49,8 @@ const SearchForm = () => {
                         ))}
                     </ul>
                     {selectedResult ? <p className="search__result">
-                        <span>{ selectedResult.title }: </span>wyrzuć do {selectedResult.garbage}.
+                        <span>{ selectedResult.title }: </span>wyrzuć do pojemnika na
+                        {getBinDict()[ selectedResult.binID ].title}.
                     </p> : null}
                     {(!filteredResults.length && searchTerm) && <p className="search__result-false"> Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę? Kliknij tutaj.
                     </p>}

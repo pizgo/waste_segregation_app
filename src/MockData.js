@@ -1,40 +1,46 @@
-const getMockData = () => [
+let mockData = [
     {
         title: 'szklana butelka',
-        garbage: "pojemnika na szkło",
-
-
+        binID: 3,
     },
     {
         title: 'styropian',
-        garbage: "pojemnika na odpady zmieszane"
-
+        binID: 4
     },
     {
         title: 'nakrętka od butelki',
-        garbage: "pojemnika na tworzywa sztuczne"
-
+        binID: 5
     },
     {
-        title: 'opakowanie po chipsach',
-        garbage: "pojemnika na tworzywa sztuczne"
-
+        title: 'plastikowa butelka',
+        binID: 5
     },
-    {
-        title: 'papier do drukowania',
-        garbage: "pojemnika na papier"
 
-    },
-    {
-        title: 'stare jabłka',
-        garbage: "pojemnika na odpady bioderadowalne"
-
-    },
-    {
-        title: 'dziurawe buty',
-        garbage: "pojemnika na odpady zmieszane"
-
-    },
 ];
 
-export default getMockData;
+let binDict = {
+    3 : {
+        "title" : "szkło",
+        "description" : "dddd",
+        "icon" : "/glass.jpg"
+    },
+
+    4 : {
+        "title" : "odpady zmieszane",
+        "description" : "jest to pojemnik na szkło itp",
+        "icon": "/mixed.jpg"
+    },
+    5 : {
+        "title" : "metale i tworzywa sztuczne",
+        "description" : "jest to pojemnik na szkło itp",
+        "icon": "/pet.jpg"
+    },
+}
+export const addNewGarbage = (newGarbage) => {
+    mockData.push(newGarbage)
+}
+
+export const  getMockData = () => mockData;
+
+export const getBinDict = () => binDict;
+
