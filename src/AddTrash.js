@@ -8,9 +8,14 @@ import glass from './glass.jpg';
 import mixed from './mixed.jpg';
 import pet from './pet.jpg';
 
+const defaultGarbage = {
+    title: "",
+    binID: ""
+}
+
 const AddTrash = () => {
 
-    
+
     const [garbageTitle, setGarbageTitle] = useState('');
     const [binID, setBinID] = useState();
     const [error, setError] = useState();
