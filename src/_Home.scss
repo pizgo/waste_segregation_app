@@ -1,0 +1,32 @@
+@import "Colors";
+@import "Fonts";
+@import "Mixins";
+
+.home {
+  margin-top: 100px;
+  font-family: $text;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__hello {
+
+    font-family: $text;
+    color: $green;
+    font-size: 2rem;
+    text-align: center;
+
+  }
+
+  &__img {
+    margin-top: 50px;
+    width: 500px;
+    height: auto;
+
+
+  }
+}
