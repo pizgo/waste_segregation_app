@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import getMockData from "./MockData";
 import {addNewGarbage} from "./MockData"
 
-import paper from './paper.jpg';
-import bio from './bio.jpg';
-import glass from './glass.jpg';
-import mixed from './mixed.jpg';
-import pet from './pet.jpg';
+import paper from '../imgs/paper.jpg';
+import bio from '../imgs/bio.jpg';
+import glass from '../imgs/glass.jpg';
+import mixed from '../imgs/mixed.jpg';
+import pet from '../imgs/pet.jpg';
 
 const defaultGarbage = {
     title: "",
@@ -76,7 +76,7 @@ const AddTrash = () => {
                 </div>
 
                 <button className="addTrash__button" onClick={handleSubmit}>Wyślij!</button>
-                    <p>{error}</p>
+                    <p className="addTrash__error">{error}</p>
             </div>
         </section>
     )

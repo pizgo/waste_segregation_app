@@ -1,8 +1,8 @@
 import React from 'react'
-import recykling from "./recykling.jpg";
+import recykling from "../imgs/recykling.jpg";
 
 const Home = () => {
-    
+
     return (
         <>
             <section className="home">

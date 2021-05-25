@@ -1,5 +1,4 @@
 import React from 'react';
-// import {Header} from "./Header";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Home from "./Home";
@@ -9,7 +8,9 @@ import AddTrash from "./AddTrash";
 
 
 const App = () => {
-  return (
+
+
+    return (
      <>
          <BrowserRouter>
              <Navbar />
@@ -27,6 +28,8 @@ const App = () => {
                  </Switch>
              </div>
          </BrowserRouter>
+
+
 
 
          {/*<Header/>*/}
