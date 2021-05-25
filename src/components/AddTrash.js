@@ -39,7 +39,6 @@ const AddTrash = () => {
         e.preventDefault()
         //walidacja
         if(garbageTitle.length < 3) {
-            console.log("Nazwa musi mieć minimum 3 litery.")
             setError("Nazwa musi mieć minimum 3 litery.");
             return;
         }
@@ -76,6 +75,7 @@ const AddTrash = () => {
                 </div>
 
                 <button className="addTrash__button" onClick={handleSubmit}>Wyślij!</button>
+                    {/*{!error && <p>Udało się! Twoja propozycja została do nas przekazana</p>}*/}
                     <p className="addTrash__error">{error}</p>
             </div>
         </section>

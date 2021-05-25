@@ -20,7 +20,6 @@ let mockData = [
         title: 'zeszyt',
         binID: 1
     },
-
     {
         title: 'tłusta tacka styropianowa',
         binID: 4
