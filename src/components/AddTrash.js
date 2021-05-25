@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import getMockData from "./MockData";
-// import {addNewGarbage} from "./MockData"
-import {db} from "./firebase.js";
+import {db} from "./Firebase.js";
 
 import paper from '../imgs/paper.jpg';
 import bio from '../imgs/bio.jpg';

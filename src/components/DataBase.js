@@ -1,4 +1,4 @@
-import {db} from "./firebase";
+import {db} from "./Firebase";
 
 export const getSearchResults = (setSearchResults) => db.collection("garbage").get().then((querySnapshot) => {
     const allResults = [];
