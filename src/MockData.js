@@ -16,23 +16,46 @@ let mockData = [
         binID: 5
     },
 
+    {
+        title: 'zeszyt',
+        binID: 1
+    },
+
+    {
+        title: 'tłusta tacka styropianowa',
+        binID: 4
+    },
+
 ];
 
 let binDict = {
+    1 : {
+        "title" : "papier",
+        "description" : "paper",
+        "icon" : "/bio.jpg"
+    },
+
+    2 : {
+        "title" : "odpady biodegradowalne",
+        "description" : "bio",
+        "icon" : "/bio.jpg"
+    },
+
+
     3 : {
         "title" : "szkło",
-        "description" : "dddd",
+        "description" : "szkło",
         "icon" : "/glass.jpg"
     },
 
     4 : {
         "title" : "odpady zmieszane",
-        "description" : "jest to pojemnik na szkło itp",
+        "description" : "odpady zmieszane",
         "icon": "/mixed.jpg"
     },
     5 : {
         "title" : "metale i tworzywa sztuczne",
-        "description" : "jest to pojemnik na szkło itp",
+        "description" : "tworzywa i metale",
         "icon": "/pet.jpg"
     },
 }

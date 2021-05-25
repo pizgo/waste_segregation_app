@@ -52,7 +52,7 @@ const AddTrash = () => {
         console.log("new garbage will be: ")
         console.log(newGarbage)
 
-        //TODO add to mock data and to databse in the future
+
         addNewGarbage(newGarbage)
 
         setError();

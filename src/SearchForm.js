@@ -11,7 +11,7 @@ const SearchForm = () => {
     const [filteredResults, setFilteredResults] = useState([]);
     const [selectedResult, SetSelectedResult] = useState(null)
 
-    //useEffecy do pobierania danych
+    //pobieram dane
     useEffect(() => {
         const getSearchResults = async () => {
             console.log("updating results from [mock] DB?")
@@ -49,8 +49,7 @@ const SearchForm = () => {
                         ))}
                     </ul>
                     {selectedResult ? <p className="search__result">
-                        <span>{ selectedResult.title }: </span>wyrzuć do pojemnika na
-                        {getBinDict()[ selectedResult.binID ].title}.
+                        <span>{ selectedResult.title }: </span>wyrzuć do pojemnika na {getBinDict()[ selectedResult.binID ].title}.
                     </p> : null}
                     {(!filteredResults.length && searchTerm) && <p className="search__result-false"> Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę? Kliknij tutaj.
                     </p>}
