@@ -2,14 +2,7 @@ import React from 'react'
 import recykling from "./recykling.jpg";
 
 const Home = () => {
-
-    const handleClick = () => {
-
-    }
-
-
-    //
-
+    
     return (
         <>
             <section className="home">

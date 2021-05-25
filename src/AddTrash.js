@@ -52,7 +52,6 @@ const AddTrash = () => {
         console.log("new garbage will be: ")
         console.log(newGarbage)
 
-
         addNewGarbage(newGarbage)
 
         setError();
@@ -69,7 +68,6 @@ const AddTrash = () => {
 
                 <input type="text" className="addTrash__form" placeholder="Tu wpisz swoją sugestię" onChange={handleChange} />
                 <div className="addTrash__bins">
-
                     <img src={paper} alt="paper" className="addTrash__bins-img" onClick={event => handleClick(1)}/>
                     <img src={bio} alt="bio" className="addTrash__bins-img"onClick={event =>handleClick(2)}/>
                     <img src={glass} alt="glass" className="addTrash__bins-img"onClick={event =>handleClick(3)}/>
