@@ -1,31 +1,3 @@
-let mockData = [
-    {
-        title: 'szklana butelka',
-        binID: 3,
-    },
-    {
-        title: 'styropian',
-        binID: 4
-    },
-    {
-        title: 'nakrętka od butelki',
-        binID: 5
-    },
-    {
-        title: 'plastikowa butelka',
-        binID: 5
-    },
-
-    {
-        title: 'zeszyt',
-        binID: 1
-    },
-    {
-        title: 'tłusta tacka styropianowa',
-        binID: 4
-    },
-
-];
 
 let binDict = {
     1 : {
@@ -58,11 +30,10 @@ let binDict = {
         "icon": "/pet.jpg"
     },
 }
-export const addNewGarbage = (newGarbage) => {
-    mockData.push(newGarbage)
-}
+// export const addNewGarbage = (newGarbage) => {
+//     mockData.push(newGarbage)
+// }
 
-export const  getMockData = () => mockData;
 
 export const getBinDict = () => binDict;
 

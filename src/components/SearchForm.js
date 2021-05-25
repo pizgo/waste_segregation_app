@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import {getMockData} from "./MockData";
 import {getBinDict} from "./MockData";
+import  {getSearchResults} from "./DataBase";
 import {db} from "./firebase";
 
 
@@ -14,18 +14,7 @@ const SearchForm = () => {
 
     //pobieram dane
     useEffect(() => {
-
-        const getSearchResults = () => db.collection("garbage").get().then((querySnapshot) => {
-            const allResults = [];
-            querySnapshot.forEach((doc) => {
-                allResults.push({
-                    ...doc.data(),
-                    id: doc.id
-                });
-            });
-            setSearchResults(allResults);
-        });
-        getSearchResults();
+        getSearchResults(setSearchResults);
     }, []);
 
     const updateSearch = e => {

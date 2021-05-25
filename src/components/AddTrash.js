@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import getMockData from "./MockData";
-import {addNewGarbage} from "./MockData"
+import React, { useState, useEffect } from 'react';
+// import getMockData from "./MockData";
+// import {addNewGarbage} from "./MockData"
+import {db} from "./firebase.js";
 
 import paper from '../imgs/paper.jpg';
 import bio from '../imgs/bio.jpg';
@@ -8,10 +9,7 @@ import glass from '../imgs/glass.jpg';
 import mixed from '../imgs/mixed.jpg';
 import pet from '../imgs/pet.jpg';
 
-const defaultGarbage = {
-    title: "",
-    binID: ""
-}
+
 
 const AddTrash = () => {
 
@@ -19,6 +17,7 @@ const AddTrash = () => {
     const [garbageTitle, setGarbageTitle] = useState('');
     const [binID, setBinID] = useState();
     const [error, setError] = useState();
+    const [success, setSuccess] = useState();
 
 
     //ustawienie stanu na input użytkownika z formularza
@@ -38,20 +37,33 @@ const AddTrash = () => {
     const handleSubmit = e => {
         e.preventDefault()
         //walidacja
-        if(garbageTitle.length < 3) {
+        if(garbageTitle.length < 3)  {
             setError("Nazwa musi mieć minimum 3 litery.");
             return;
         }
 
-        let newGarbage = {
-                title: garbageTitle,
-                binID: binID
-            };
+        db.collection("garbage").add({
+            title: garbageTitle,
+            binID: binID,
+        })
+            .then((docRef) => {
+                console.log("Document written with ID: ", docRef.id);
+                setSuccess("Udało się! Twoja propozycja została do nas przesłana")
+            })
 
-        console.log("new garbage will be: ")
-        console.log(newGarbage)
+            .catch((error) => {
+                console.error("Error adding document: ",error);
+            })
 
-        addNewGarbage(newGarbage)
+        // let newGarbage = {
+        //         title: garbageTitle,
+        //         binID: binID
+        //     };
+        //
+        // console.log("new garbage will be: ")
+        // console.log(newGarbage)
+        //
+        // addNewGarbage(newGarbage)
 
         setError();
     }
@@ -75,7 +87,6 @@ const AddTrash = () => {
                 </div>
 
                 <button className="addTrash__button" onClick={handleSubmit}>Wyślij!</button>
-                    {/*{!error && <p>Udało się! Twoja propozycja została do nas przekazana</p>}*/}
                     <p className="addTrash__error">{error}</p>
             </div>
         </section>
