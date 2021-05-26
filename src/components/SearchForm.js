@@ -32,25 +32,28 @@ const SearchForm = () => {
     }
 
     return (
-        <section className="search">
-            <div className="search__container">
-                    <p className="search__hello">Co chcesz dziś wyrzucić?</p>
-                    <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić" onChange={updateSearch} />
+        <div className="container">
+            <section className="search">
+                <div className="search__container">
+                        <p className="search__hello">Co chcesz dziś wyrzucić?</p>
+                        <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić" onChange={updateSearch} />
 
-                    <ul className="search__list" style={{display: (selectedResult || !searchTerm || (!filteredResults.length && searchTerm)) ? 'none' : 'block'}}>
-                        {filteredResults.map((item, index) => (
-                            <li className="search__list-element" key={index} onClick={() => handleSuggestClick(index)}>
-                                {item.title}
-                            </li>
-                        ))}
-                    </ul>
-                    {selectedResult ? <p className="search__result">
-                        <span>{ selectedResult.title }: </span>wyrzuć do pojemnika na {getBinDict()[ selectedResult.binID ].title}.
-                    </p> : null}
-                    {(!filteredResults.length && searchTerm) && <p className="search__result-false"> Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę? Kliknij tutaj.
-                    </p>}
-            </div>
-        </section>
+                        <ul className="search__list" style={{display: (selectedResult || !searchTerm || (!filteredResults.length && searchTerm)) ? 'none' : 'block'}}>
+                            {filteredResults.map((item, index) => (
+                                <li className="search__list-element" key={index} onClick={() => handleSuggestClick(index)}>
+                                    {item.title}
+                                </li>
+                            ))}
+                        </ul>
+                        {selectedResult ? <p className="search__result">
+                            { selectedResult.title }: wyrzuć do pojemnika na <span>{getBinDict()[ selectedResult.binID ].title}.</span>
+                        </p> : null}
+                        {(!filteredResults.length && searchTerm) && <p className="search__result-false"> Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę?
+                            <a href="/AddTrash"> Kliknij tutaj.</a>
+                        </p>}
+                </div>
+            </section>
+        </div>
     );
 }
 

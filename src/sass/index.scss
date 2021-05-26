@@ -7,11 +7,13 @@
 @import "Home";
 @import "SearchForm";
 @import "AddTrash";
+@import "Footer";
+
 
 
 body {
   margin: 0;
   box-sizing: border-box;
+  background-image: url('../imgs/background.jpg');
+  position: relative;
 }
-
-

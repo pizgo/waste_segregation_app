@@ -6,6 +6,7 @@ export const trashTest = () => {
 
     const [trash, setTrash] = useState([]);
 
+
     useEffect(() => {
         db.collection("garbage").get().then((querySnapshot) => {
             const allTrash = [];

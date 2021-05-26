@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import SearchForm from "./SearchForm";
 import AddTrash from "./AddTrash";
+import {Footer} from "./Footer.js"
 
 
 
@@ -27,6 +28,7 @@ const App = () => {
                      </Route>
                  </Switch>
              </div>
+             {/*<Footer/>*/}
          </BrowserRouter>
 
 
