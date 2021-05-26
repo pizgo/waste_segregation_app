@@ -59,14 +59,16 @@
 
     &-img {
       padding: 15px;
-      width: 20%;
+      width: 24%;
       height: auto;
       border-radius: 50%;
       cursor: pointer;
 
       &-clicked {
-        width: 24%;
+        width: 30%;
+
       }
+
 
 
       @include tablet () {

@@ -10,7 +10,8 @@ const SearchForm = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [filteredResults, setFilteredResults] = useState([]);
-    const [selectedResult, SetSelectedResult] = useState(null)
+    const [selectedResult, setSelectedResult] = useState(null);
+    // const [value, setValue] = useState("");
 
     //pobieram dane
     useEffect(() => {
@@ -18,27 +19,25 @@ const SearchForm = () => {
     }, []);
 
     const updateSearch = e => {
-        SetSelectedResult(null)
+
+        setSelectedResult(null)
         setSearchTerm(e.target.value);
         let newFilteredResults = searchResults.filter(result => result.title.match(new RegExp(e.target.value, 'gi')))
-        setFilteredResults(newFilteredResults)
-
+        setFilteredResults(newFilteredResults);
     };
 
 
     function handleSuggestClick(index) {
-        console.log("click!")
         const clickedItem = filteredResults[index];
-        SetSelectedResult(clickedItem);
-        
-    }
+        setSelectedResult(clickedItem);
+    };
 
     return (
         <div className="container">
             <section className="search">
                 <div className="search__container">
                         <p className="search__hello">Co chcesz dziś wyrzucić?</p>
-                        <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić" onChange={updateSearch} />
+                        <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić"  onChange={updateSearch} />
 
                         <ul className="search__list" style={{display: (selectedResult || !searchTerm || (!filteredResults.length && searchTerm)) ? 'none' : 'block'}}>
                             {filteredResults.map((item, index) => (

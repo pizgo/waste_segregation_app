@@ -14,9 +14,10 @@ const AddTrash = () => {
 
     const [garbageTitle, setGarbageTitle] = useState('');
     const [binID, setBinID] = useState();
-    const [isClicked, setIsClicked] = useState(false);
+    const [clickedId, setClickedId] = useState();
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
+
 
 
     //ustawienie stanu na input użytkownika z formularza
@@ -26,15 +27,14 @@ const AddTrash = () => {
         console.log(newGarbageTitle);
         setSuccess();
         setError();
+        setClickedId()
     }
 
     //pobieranie kosza
     const handleClick = (id) => {
         setBinID(id)
         console.log({id})
-        setIsClicked(true);
-
-
+        setClickedId(id);
     }
     //wysyłanie
 
@@ -72,16 +72,16 @@ const AddTrash = () => {
         <section className="addTrash">
                 <div className="addTrash__container">
                     <p className="addTrash__hello">Jeśli chcesz uzupełnić naszą bazę, wpisz w poniżej rodzaj
-                    śmiecia. Następnie wybierz, do którego pojemnika należy go wyrzucić i kliknij przycisk.
-                    Zapoznamy się z Twoją sugestią i uzupełnimy bazę naszych śmieci!</p>
+                    śmiecia, wybierz, do którego pojemnika należy go wyrzucić i kliknij "Wyślij".
+                    Zapoznamy się z Twoją sugestią i uzupełnimy bazę naszych śmieci.</p>
 
                     <input type="text" className="addTrash__form" placeholder="Tu wpisz swoją sugestię" onChange={handleChange} />
                     <div className="addTrash__bins">
-                        <img src={paper} alt="paper" className="addTrash__bins-img" onClick={event => handleClick(1)}/>
-                        <img src={bio} alt="bio" className="addTrash__bins-img"onClick={event =>handleClick(2)}/>
-                        <img src={glass} alt="glass" className="addTrash__bins-img"onClick={event =>handleClick(3)}/>
-                        <img src={mixed} alt="mixed" className="addTrash__bins-img"onClick={event =>handleClick(4)}/>
-                        <img src={pet} alt="pet" className="addTrash__bins-img"onClick={event =>handleClick(5)}/>
+                        <img src={paper} alt="paper" className={`addTrash__bins-img ${clickedId == 1 && "addTrash__bins-img-clicked"} `} onClick={event => handleClick(1)}/>
+                        <img src={bio} alt="bio"     className={`addTrash__bins-img ${clickedId == 2 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(2)}/>
+                        <img src={glass} alt="glass" className={`addTrash__bins-img ${clickedId == 3 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(3)}/>
+                        <img src={mixed} alt="mixed" className={`addTrash__bins-img ${clickedId == 4 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick( 4)}/>
+                        <img src={pet} alt="pet"     className={`addTrash__bins-img ${clickedId == 5 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(5)}/>
                     </div>
 
                     <button className="addTrash__button" onClick={handleSubmit}>Wyślij!</button>
