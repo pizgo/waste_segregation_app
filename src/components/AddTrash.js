@@ -24,6 +24,8 @@ const AddTrash = () => {
         let newGarbageTitle = e.target.value;
         setGarbageTitle(newGarbageTitle);
         console.log(newGarbageTitle);
+        setSuccess();
+        setError();
     }
 
     //pobieranie kosza
@@ -31,6 +33,7 @@ const AddTrash = () => {
         setBinID(id)
         console.log({id})
         setIsClicked(true);
+
 
     }
     //wysyłanie
@@ -62,6 +65,7 @@ const AddTrash = () => {
             })
 
         setError();
+
     }
 
     return (

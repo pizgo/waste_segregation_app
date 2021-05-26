@@ -22,6 +22,7 @@ const SearchForm = () => {
         setSearchTerm(e.target.value);
         let newFilteredResults = searchResults.filter(result => result.title.match(new RegExp(e.target.value, 'gi')))
         setFilteredResults(newFilteredResults)
+
     };
 
 
@@ -29,6 +30,7 @@ const SearchForm = () => {
         console.log("click!")
         const clickedItem = filteredResults[index];
         SetSelectedResult(clickedItem);
+        
     }
 
     return (
