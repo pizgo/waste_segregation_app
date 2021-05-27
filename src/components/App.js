@@ -1,16 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Navbar from "./Navbar";
-import Home from "./Home";
-import SearchForm from "./SearchForm";
-import AddTrash from "./AddTrash";
-import {Footer} from "./Footer.js"
+import {Navbar} from "./Navbar";
+import {Home} from "./Home";
+import {SearchForm} from "./SearchForm";
+import {AddTrash} from "./AddTrash";
 
-
-
-const App = () => {
-
-
+export const App = () => {
     return (
      <>
          <BrowserRouter>
@@ -28,17 +23,8 @@ const App = () => {
                      </Route>
                  </Switch>
              </div>
-             {/*<Footer/>*/}
          </BrowserRouter>
-
-
-
-
-         {/*<Header/>*/}
-
-
      </>
   )
 }
 
-export default App;

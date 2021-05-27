@@ -8,8 +8,7 @@ import mixed from '../imgs/mixed.jpg';
 import pet from '../imgs/pet.jpg';
 
 
-
-const AddTrash = () => {
+export const AddTrash = () => {
 
 
     const [garbageTitle, setGarbageTitle] = useState('');
@@ -20,28 +19,26 @@ const AddTrash = () => {
 
 
 
-    //ustawienie stanu na input użytkownika z formularza
+    //adding garbage.title
     const handleChange = e => {
-        let newGarbageTitle = e.target.value;
-        setGarbageTitle(newGarbageTitle);
-        console.log(newGarbageTitle);
+        setGarbageTitle(e.target.value)
         setSuccess();
         setError();
         setClickedID();
         setBinID();
     }
 
-    //pobieranie kosza
+    //adding binID
     const handleClick = (id) => {
         setBinID(id)
         console.log({id})
         setClickedID(id);
     }
-    //wysyłanie
 
+    //sending to firebase
     const handleSubmit = e => {
         e.preventDefault()
-        //walidacja
+        //validation
         console.log("bin ID")
         console.log(binID)
         if(garbageTitle.length < 3)  {
@@ -66,7 +63,6 @@ const AddTrash = () => {
             })
 
         setError();
-
     }
 
     return (
@@ -94,5 +90,4 @@ const AddTrash = () => {
 }
 
 
-export default AddTrash;
 

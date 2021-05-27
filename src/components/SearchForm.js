@@ -1,44 +1,42 @@
 import React, { useState, useEffect } from 'react'
 import {getBinDict} from "./BinDict";
 import  {getSearchResults} from "./DataBase";
-import {db} from "./Firebase";
 
 
-
-
-const SearchForm = () => {
+export const SearchForm = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [filteredResults, setFilteredResults] = useState([]);
     const [selectedResult, setSelectedResult] = useState(null);
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState();
 
-    //pobieram dane
+    //fetching data from firebase
     useEffect(() => {
         getSearchResults(setSearchResults);
     }, []);
 
+    //updating autocomplete search
     const updateSearch = e => {
 
-        setSelectedResult(null)
+        setSelectedResult(null);
+        setValue(e.target.value);
         setSearchTerm(e.target.value);
-        let newFilteredResults = searchResults.filter(result => result.title.match(new RegExp(e.target.value, 'gi')))
-        setFilteredResults(newFilteredResults);
+        setFilteredResults(searchResults.filter(result => result.title.match(new RegExp(e.target.value, 'gi'))))
     };
 
-
+    //choosing autosuggestion
     function handleSuggestClick(index) {
-        const clickedItem = filteredResults[index];
-        setSelectedResult(clickedItem);
-
-    };
+        setSelectedResult(filteredResults[index]);
+        // let newValue = "";
+        // setValue(newValue);
+    }
 
     return (
         <div className="container">
             <section className="search">
                 <div className="search__container">
                         <p className="search__hello">Co chcesz dziś wyrzucić?</p>
-                        <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić"  onChange={updateSearch} />
+                        <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić" value={value} onChange={updateSearch} />
 
                         <ul className="search__list" style={{display: (selectedResult || !searchTerm || (!filteredResults.length && searchTerm)) ? 'none' : 'block'}}>
                             {filteredResults.map((item, index) => (
@@ -47,9 +45,10 @@ const SearchForm = () => {
                                 </li>
                             ))}
                         </ul>
-                        {selectedResult ? <p className="search__result">
-                            <span>{ selectedResult.title }</span> : wyrzuć do pojemnika na <span>{getBinDict()[ selectedResult.binID ].title}.</span>
-                        </p> : null}
+                        {selectedResult ?
+                            <p className="search__result">
+                            <span>{ selectedResult.title }</span> : wyrzuć do pojemnika na <span>{getBinDict()[ selectedResult.binID ].title}.</span></p>
+                            : null}
                         {(!filteredResults.length && searchTerm) && <p className="search__result-false"> Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę?
                             <a href="/AddTrash"> Kliknij tutaj.</a>
                         </p>}
@@ -59,6 +58,5 @@ const SearchForm = () => {
     );
 }
 
-export default SearchForm;
 
 

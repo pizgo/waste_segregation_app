@@ -8,7 +8,6 @@ export const getSearchResults = (setSearchResults) => db.collection("garbage").g
             id: doc.id
         });
     });
-
     setSearchResults(allResults);
 });
 

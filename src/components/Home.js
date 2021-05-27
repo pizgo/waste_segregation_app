@@ -1,7 +1,7 @@
 import React from 'react'
 import recykling from "../imgs/recykling.jpg";
 
-const Home = () => {
+export const Home = () => {
 
     return (
         <div className="container">
@@ -22,5 +22,4 @@ const Home = () => {
     )
 }
 
-export default Home;
 
