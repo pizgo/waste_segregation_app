@@ -1,5 +1,4 @@
-
-let binDict = {
+const binDict = {
     1 : {
         "title" : "papier",
     },

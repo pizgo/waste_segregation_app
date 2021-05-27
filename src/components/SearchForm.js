@@ -8,7 +8,6 @@ export const SearchForm = () => {
     const [searchResults, setSearchResults] = useState([]);
     const [filteredResults, setFilteredResults] = useState([]);
     const [selectedResult, setSelectedResult] = useState(null);
-    const [value, setValue] = useState();
 
     //fetching data from firebase
     useEffect(() => {
@@ -19,7 +18,6 @@ export const SearchForm = () => {
     const updateSearch = e => {
 
         setSelectedResult(null);
-        setValue(e.target.value);
         setSearchTerm(e.target.value);
         setFilteredResults(searchResults.filter(result => result.title.match(new RegExp(e.target.value, 'gi'))))
     };
@@ -27,8 +25,6 @@ export const SearchForm = () => {
     //choosing autosuggestion
     function handleSuggestClick(index) {
         setSelectedResult(filteredResults[index]);
-        // let newValue = "";
-        // setValue(newValue);
     }
 
     return (
@@ -36,7 +32,7 @@ export const SearchForm = () => {
             <section className="search">
                 <div className="search__container">
                         <p className="search__hello">Co chcesz dziś wyrzucić?</p>
-                        <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić" value={value} onChange={updateSearch} />
+                        <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić" onChange={updateSearch} />
 
                         <ul className="search__list" style={{display: (selectedResult || !searchTerm || (!filteredResults.length && searchTerm)) ? 'none' : 'block'}}>
                             {filteredResults.map((item, index) => (
