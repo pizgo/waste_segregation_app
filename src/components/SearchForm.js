@@ -11,7 +11,7 @@ const SearchForm = () => {
     const [searchResults, setSearchResults] = useState([]);
     const [filteredResults, setFilteredResults] = useState([]);
     const [selectedResult, setSelectedResult] = useState(null);
-    // const [value, setValue] = useState("");
+    const [value, setValue] = useState("");
 
     //pobieram dane
     useEffect(() => {
@@ -30,6 +30,7 @@ const SearchForm = () => {
     function handleSuggestClick(index) {
         const clickedItem = filteredResults[index];
         setSelectedResult(clickedItem);
+
     };
 
     return (
@@ -47,7 +48,7 @@ const SearchForm = () => {
                             ))}
                         </ul>
                         {selectedResult ? <p className="search__result">
-                            { selectedResult.title }: wyrzuć do pojemnika na <span>{getBinDict()[ selectedResult.binID ].title}.</span>
+                            <span>{ selectedResult.title }</span> : wyrzuć do pojemnika na <span>{getBinDict()[ selectedResult.binID ].title}.</span>
                         </p> : null}
                         {(!filteredResults.length && searchTerm) && <p className="search__result-false"> Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę?
                             <a href="/AddTrash"> Kliknij tutaj.</a>

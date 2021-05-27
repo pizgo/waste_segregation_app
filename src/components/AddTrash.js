@@ -14,7 +14,7 @@ const AddTrash = () => {
 
     const [garbageTitle, setGarbageTitle] = useState('');
     const [binID, setBinID] = useState();
-    const [clickedId, setClickedId] = useState();
+    const [clickedID, setClickedID] = useState();
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
 
@@ -27,14 +27,15 @@ const AddTrash = () => {
         console.log(newGarbageTitle);
         setSuccess();
         setError();
-        setClickedId()
+        setClickedID();
+        setBinID();
     }
 
     //pobieranie kosza
     const handleClick = (id) => {
         setBinID(id)
         console.log({id})
-        setClickedId(id);
+        setClickedID(id);
     }
     //wysyłanie
 
@@ -77,11 +78,11 @@ const AddTrash = () => {
 
                     <input type="text" className="addTrash__form" placeholder="Tu wpisz swoją sugestię" onChange={handleChange} />
                     <div className="addTrash__bins">
-                        <img src={paper} alt="paper" className={`addTrash__bins-img ${clickedId == 1 && "addTrash__bins-img-clicked"} `} onClick={event => handleClick(1)}/>
-                        <img src={bio} alt="bio"     className={`addTrash__bins-img ${clickedId == 2 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(2)}/>
-                        <img src={glass} alt="glass" className={`addTrash__bins-img ${clickedId == 3 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(3)}/>
-                        <img src={mixed} alt="mixed" className={`addTrash__bins-img ${clickedId == 4 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick( 4)}/>
-                        <img src={pet} alt="pet"     className={`addTrash__bins-img ${clickedId == 5 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(5)}/>
+                        <img src={paper} alt="paper" className={`addTrash__bins-img ${clickedID === 1 && "addTrash__bins-img-clicked"} `} onClick={event => handleClick(1)}/>
+                        <img src={bio} alt="bio"     className={`addTrash__bins-img ${clickedID === 2 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(2)}/>
+                        <img src={glass} alt="glass" className={`addTrash__bins-img ${clickedID === 3 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(3)}/>
+                        <img src={mixed} alt="mixed" className={`addTrash__bins-img ${clickedID === 4 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick( 4)}/>
+                        <img src={pet} alt="pet"     className={`addTrash__bins-img ${clickedID === 5 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(5)}/>
                     </div>
 
                     <button className="addTrash__button" onClick={handleSubmit}>Wyślij!</button>
