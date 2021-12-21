@@ -25,6 +25,7 @@ export const SearchForm = () => {
     //choosing autosuggestion
     function handleSuggestClick(index) {
         setSelectedResult(filteredResults[index]);
+        setSearchTerm("");
     }
 
     return (
@@ -32,9 +33,11 @@ export const SearchForm = () => {
             <section className="search">
                 <div className="search__container">
                         <p className="search__hello">Co chcesz dziś wyrzucić?</p>
-                        <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić" onChange={updateSearch} />
+                        <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić"
+                               value={searchTerm} onChange={updateSearch} />
 
-                        <ul className="search__list" style={{display: (selectedResult || !searchTerm || (!filteredResults.length && searchTerm)) ? 'none' : 'block'}}>
+                        <ul className="search__list" style={{display: (selectedResult || !searchTerm ||
+                                (!filteredResults.length && searchTerm)) ? 'none' : 'block'}}>
                             {filteredResults.map((item, index) => (
                                 <li className="search__list-element" key={index} onClick={() => handleSuggestClick(index)}>
                                     {item.title}
