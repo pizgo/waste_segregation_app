@@ -1,6 +1,6 @@
-@import "../sass/Colors";
-@import "../sass/Fonts";
-@import "../sass/Mixins";
+@import "/src/css/settings/Colors";
+@import "/src/css/settings/Fonts";
+@import "/src/css/settings/Mixins";
 
 .home {
   font-family: $text;
@@ -13,11 +13,12 @@
   }
 
   &__hello {
+    width: 40%;
     font-family: $text;
     color: $black;
     font-size: 2rem;
     font-weight: bold;
-    text-align: justify;
+    text-align: center;
     margin-top: 100px;
 
 

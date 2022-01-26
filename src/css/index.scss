@@ -1,8 +1,8 @@
 @import "Reset";
 @import "Normalize";
-@import "Colors";
-@import "Fonts";
-@import "Mixins";
+@import "settings/Colors";
+@import "settings/Fonts";
+@import "settings/Mixins";
 @import "Navbar";
 @import "Home";
 @import "SearchForm";
@@ -12,6 +12,6 @@
 body {
   margin: 0;
   box-sizing: border-box;
-  background-image: url('../imgs/background.jpg');
+  background-image: url('../assets/background.jpg');
   position: relative;
 }

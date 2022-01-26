@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import {getBinDict} from "./BinDict";
-import  {getSearchResults} from "./DataBase";
+import {getBinDict} from "../resources/BinDict";
+import  {getSearchResults} from "../resources/DataBase";
 
 
 export const SearchForm = () => {

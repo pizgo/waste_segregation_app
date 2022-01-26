@@ -1,5 +1,5 @@
 import React from 'react'
-import recykling from "../imgs/recykling.jpg";
+import recykling from "../../assets/recykling.jpg";
 
 export const Home = () => {
 
@@ -8,10 +8,10 @@ export const Home = () => {
             <div className="container">
                 <section className="home">
                     <div className="home__container">
-                        <p className="home__hello">
-                            Witaj w miejscu, w którym posegregujesz swoje śmieci.<br/>
-                            Kliknij na zdjęcie, żeby przenieść się dalej!
-                        </p>
+                        <div className="home__hello">
+                            Witaj w miejscu, w którym posegregujesz swoje śmieci.
+                            Kliknij na zdjęcie, żeby przenieść się dalej
+                        </div>
                         <a href="/SearchForm">
                             <img src={recykling} alt="kliknij, żeby przejść dalej" className="home__img"/>
                         </a>

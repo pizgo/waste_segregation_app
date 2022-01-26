@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {db} from "./Firebase.js";
+import {db} from "../resources/Firebase.js";
 
-import paper from '../imgs/paper.jpg';
-import bio from '../imgs/bio.jpg';
-import glass from '../imgs/glass.jpg';
-import mixed from '../imgs/mixed.jpg';
-import pet from '../imgs/pet.jpg';
+import paper from '../../assets/paper.jpg';
+import bio from '../../assets/bio.jpg';
+import glass from '../../assets/glass.jpg';
+import mixed from '../../assets/mixed.jpg';
+import pet from '../../assets/pet.jpg';
 
 
 export const AddTrash = () => {

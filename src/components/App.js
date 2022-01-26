@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import {Navbar} from "./Navbar";
-import {Home} from "./Home";
-import {SearchForm} from "./SearchForm";
-import {AddTrash} from "./AddTrash";
+import {Navbar} from "./Navigation/Navbar";
+import {Home} from "./Home/Home";
+import {SearchForm} from "./SearchForm/SearchForm";
+import {AddTrash} from "./AddTrash/AddTrash";
 
 export const App = () => {
     return (
@@ -17,6 +17,9 @@ export const App = () => {
                      </Route>
                      <Route exact path="/SearchForm">
                         <SearchForm/>
+                     </Route>
+                     <Route exact path="/WhereToThrow">
+                         <SearchForm/>
                      </Route>
                      <Route exact path="/AddTrash">
                          <AddTrash/>
