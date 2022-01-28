@@ -18,7 +18,7 @@ export const App = () => {
                      <Route exact path="/SearchForm">
                         <SearchForm/>
                      </Route>
-                     <Route exact path="/WhereToThrow">
+                     <Route exact path="/PszokMap">
                          <SearchForm/>
                      </Route>
                      <Route exact path="/AddTrash">
