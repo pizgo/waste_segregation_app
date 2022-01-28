@@ -46,6 +46,15 @@
     width: 70vw;
     position: absolute;
     box-shadow: 7px 0 10px rgba(0, 0, 0, 0.3);
+
+    @include tablet {
+      flex-direction: row;
+      height: 20vh;
+      width: 100vh;
+      position: relative;
+
+    }
+
   }
 
   &__element {
