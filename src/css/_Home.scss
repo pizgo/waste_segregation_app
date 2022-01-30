@@ -13,7 +13,7 @@
   }
 
   &__text1 {
-    margin-top: 80px;
+    margin-top: 60px;
     text-align: center;
     padding: 0 40px;
     line-height: 30px;
@@ -26,10 +26,12 @@
 
     @include tablet {
       margin-bottom: 80px;
+      margin-top: 80px;
     }
 
     @include desktop {
       margin-bottom: 80px;
+      margin-top: 80px;
     }
   }
 

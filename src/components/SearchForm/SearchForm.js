@@ -32,7 +32,7 @@ export const SearchForm = () => {
         <div className="container">
             <section className="search">
                 <div className="search__container">
-                        <p className="search__hello">Co chcesz dziś wyrzucić?</p>
+                        <p className="search__text text__header">Co chcesz wyrzucić?</p>
                         <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić"
                                value={searchTerm} onChange={updateSearch} />
 
