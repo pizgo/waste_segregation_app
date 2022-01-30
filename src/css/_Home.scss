@@ -12,37 +12,74 @@
     align-items: center;
   }
 
-  &__hello {
-    width: 40%;
-    font-family: $text;
-    color: $black;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
+  &__text1 {
     margin-top: 100px;
+    text-align: center;
+    padding: 0 40px;
+    line-height: 30px;
+  }
 
+  &__text2 {
+    margin-top: 20px;
+    text-align: center;
+    padding: 0px 40px;
 
-    @include tablet {
-      font-size: 1.6rem;
+  }
+
+  &__choice {
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    @include mobile {
-      padding: 0px 30px;
-      margin-top: 40px;
+    &-box {
+      @include createBox(250px, 250px, 10px, $background, 20px);
+      position: relative;
+      box-shadow: 0 0 15px background;
+
+      &:hover {
+        background: linear-gradient(130deg, $hoverBgColor 0%, $hoverBgColor2 100%);
+        box-shadow: none;
+      }
+    }
+
+    &-boxContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+    }
+
+    &-icon {
+      color: #8293ff;
+      font-size: 48px;
+      padding: 15px;
+
+      &:hover {
+        color: white;
+        transition: .3s all ease-in-out;
+      }
+
+    }
+
+    &-text {
+      color: #8293ff;
+      font-size: 15px;
+      height: 20%;
+
+      &:hover {
+        color: white;
+        transition: .3s all ease-in-out;
+      }
+
     }
   }
 
-  &__img {
-    margin-top: 50px;
-    width: 500px;
-    height: auto;
 
-    @include tablet {
-      width: 300px;
-    }
 
-    @include mobile {
-      width: 250px;
-    }
-  }
+
 }

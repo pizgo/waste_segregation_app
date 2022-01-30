@@ -13,7 +13,14 @@ body {
   margin: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #ffffe5;
+  background-color: $background;
   font-family: $text;
   font-size: 16px;
+}
+
+
+.text__header {
+  font-family: $text;
+  font-size: 1.4rem;
+
 }
