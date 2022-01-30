@@ -18,31 +18,31 @@ export const Home = () => {
                             Wybierz, co chcesz zrobić:
                         </div>
                         <div className='home__choice-container'>
-                            <NavLink  to="/SearchForm">
+                            <NavLink  className='home__choice-link' to="/SearchForm">
                                 <div className='home__choice-box'>
                                     <div className='home__choice-boxContent'>
-                                        <BiSearch className='home__choice-icon'/>
-                                        <p className='home__choice-text text__regular'>
+                                        <BiSearch className='home__choice-icon icon'/>
+                                        <p className='home__choice-text text__regular desc'>
                                             Chcę dowiedzieć się, do jakiego kontenera wyrzucić moje odpadki.
                                         </p>
                                     </div>
                                 </div>
                             </NavLink>
-                            <NavLink to="/AddTrash">
+                            <NavLink className='home__choice-link' to="/AddTrash">
                                 <div className='home__choice-box'>
                                     <div className='home__choice-boxContent'>
-                                        <BiPlus className='home__choice-icon'/>
-                                        <p className='home__choice-text text__regular'>
+                                        <BiPlus className='home__choice-icon icon'/>
+                                        <p className='home__choice-text text__regular desc'>
                                             Mam pomysł, jak uzupełnić waszą bazę danych.
                                         </p>
                                     </div>
                                 </div>
                             </NavLink>
-                            <NavLink  to="/PszokMap">
+                            <NavLink  className='home__choice-link' to="/PszokMap">
                                 <div className='home__choice-box'>
                                     <div className='home__choice-boxContent'>
-                                        <BiMap className='home__choice-icon'/>
-                                        <p className='home__choice-text text__regular'>
+                                        <BiMap className='home__choice-icon icon'/>
+                                        <p className='home__choice-text text__regular desc'>
                                         Chcę zobaczyć, gdzie znajduje się najbliższy Punkt Selektywnej Zbiórki Odpadów.
                                         </p>
                                     </div>

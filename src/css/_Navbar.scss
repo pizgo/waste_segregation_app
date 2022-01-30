@@ -45,11 +45,12 @@
     height: 100vh;
     width: 70vw;
     position: absolute;
+    z-index: 4;
     box-shadow: 7px 0 10px rgba(0, 0, 0, 0.3);
 
     @include tablet {
       flex-direction: row;
-      height: 20vh;
+      height: auto;
       width: 100vw;
       position: relative;
       justify-content: space-between;
@@ -58,7 +59,7 @@
 
     @include desktop {
       flex-direction: row;
-      height: 20vh;
+      height: auto;
       width: 100vw;
       position: relative;
       justify-content: space-between;
@@ -99,7 +100,7 @@
 
   &__link {
     text-decoration: none;
-    color: white;
+    color: $background;
     font-size: 1.2rem;
 
     @include desktop {
