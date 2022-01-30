@@ -24,4 +24,12 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
 
+  @include tablet {
+    font-size: 1.6rem;
+  }
+
+  @include desktop {
+    font-size: 2rem;
+  }
+
 }

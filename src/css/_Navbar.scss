@@ -24,6 +24,7 @@
     display: none;
   }
 
+
   &__menu {
     color: black;
     position: absolute;
@@ -68,6 +69,7 @@
 
   }
 
+
   &__element {
     padding: 15px 40px;
 
@@ -77,6 +79,7 @@
 
     @include tablet {
       padding: 40px;
+      text-align: center;
 
       &:first-of-type {
         padding-left: 100px;
@@ -90,21 +93,23 @@
       padding: 40px;
 
       &:first-of-type {
-        padding-left: 250px;
+        padding-left: 190px;
       }
       &:last-of-type {
-        padding-right: 250px;
+        padding-right: 190px;
       }
     }
+
   }
 
   &__link {
     text-decoration: none;
-    color: $background;
+    color: white;
     font-size: 1.2rem;
 
     @include desktop {
       font-size: 1.4rem;
+
     }
 
     &:hover {
