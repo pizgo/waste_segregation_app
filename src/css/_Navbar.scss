@@ -56,6 +56,15 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
+    @include desktop {
+      flex-direction: row;
+      height: 20vh;
+      width: 100vw;
+      position: relative;
+      justify-content: space-between;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
   }
 
   &__element {
@@ -76,12 +85,27 @@
       }
     }
 
+    @include desktop {
+      padding: 40px;
+
+      &:first-of-type {
+        padding-left: 250px;
+      }
+      &:last-of-type {
+        padding-right: 250px;
+      }
+    }
+
   }
 
   &__link {
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
+
+    @include desktop {
+      font-size: 1.4rem;
+    }
 
     &:hover {
       color: black;
