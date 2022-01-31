@@ -4,6 +4,7 @@ import {Navbar} from "./Navigation/Navbar";
 import {Home} from "./Home/Home";
 import {SearchForm} from "./SearchForm/SearchForm";
 import {AddTrash} from "./AddTrash/AddTrash";
+import {CollectionMap} from "./CollectionMap/CollectionMap";
 
 export const App = () => {
     return (
@@ -18,8 +19,8 @@ export const App = () => {
                      <Route exact path="/SearchForm">
                         <SearchForm/>
                      </Route>
-                     <Route exact path="/PszokMap">
-                         <SearchForm/>
+                     <Route exact path="/CollectionMap">
+                         <CollectionMap/>
                      </Route>
                      <Route exact path="/AddTrash">
                          <AddTrash/>

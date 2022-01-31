@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
   }
 
   &__text1 {
@@ -17,6 +18,12 @@
     text-align: center;
     padding: 0 40px;
     line-height: 30px;
+
+    @include desktop {
+      margin-top: 90px;
+      max-width: 50vw;
+      line-height: 40px;
+    }
   }
 
   &__text2 {
@@ -31,7 +38,7 @@
 
     @include desktop {
       margin-bottom: 80px;
-      margin-top: 80px;
+      margin-top: 50px;
     }
   }
 

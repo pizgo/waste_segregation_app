@@ -14,13 +14,22 @@
     align-items: center;
     width: 80vw;
 
+    @include tablet {
+      max-width: 60vw;
+    }
+
     @include desktop {
-      width: 60vw;
+      max-width: 50vw;
+      margin-top: 90px;
     }
   }
 
   &__text {
     margin-bottom: 30px;
+
+    @include desktop {
+      margin-bottom: 60px;
+    }
   }
 
   &__form {
@@ -39,6 +48,13 @@
     &:focus {
       box-shadow: none;
     }
+
+    @include tablet {
+      max-width: 80%
+    }
+    @include desktop {
+      max-width: 80%
+    }
   }
 
   &__list {
@@ -54,6 +70,7 @@
 
     @include desktop {
       max-height: 300px;
+      max-width: 80%;
     }
 
     &-element {
@@ -75,6 +92,11 @@
     font-size: 1.3rem;
     font-weight: bold;
     line-height: 2.2rem;
+    text-align: center;
+
+    @include desktop {
+      max-width: 80%;
+    }
 
     &-element {
       color: $green;

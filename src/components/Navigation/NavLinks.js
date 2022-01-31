@@ -42,7 +42,7 @@ const NavLinks = ({isMobile, closeMobileMenu}) => {
                         initial={animateSideBarFrom}
                         animate={animateSideBarTo}
                         transition={{delay: 0.1}}>
-                        <NavLink className="nav__link" to="/PszokMap"
+                        <NavLink className="nav__link" to="/CollectionMap"
                                  onClick={isMobile && closeMobileMenu}>
                             Mapa PSZOK-ów
                         </NavLink>

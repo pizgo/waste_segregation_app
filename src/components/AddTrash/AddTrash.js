@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import {db} from "../resources/Firebase.js";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faNewspaper} from '@fortawesome/free-solid-svg-icons'
 
-import paper from '../../assets/paper.jpg';
-import bio from '../../assets/bio.jpg';
-import glass from '../../assets/glass.jpg';
-import mixed from '../../assets/mixed.jpg';
-import pet from '../../assets/pet.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faAppleAlt} from '@fortawesome/free-solid-svg-icons'
+import {faScroll} from '@fortawesome/free-solid-svg-icons'
+import {faWineBottle} from '@fortawesome/free-solid-svg-icons'
+import {faTrash} from '@fortawesome/free-solid-svg-icons'
+import {GiOpenedFoodCan} from 'react-icons/gi';
+
+// import paper from '../../assets/paper.jpg';
+// import bio from '../../assets/bio.jpg';
+// import glass from '../../assets/glass.jpg';
+// import mixed from '../../assets/mixed.jpg';
+// import pet from '../../assets/pet.jpg';
 
 
 
@@ -76,17 +81,32 @@ export const AddTrash = () => {
                     </p>
                     <input type="text" className="addTrash__form" placeholder="Tu wpisz swoją sugestię" onChange={handleChange} />
                     <div className="addTrash__bins">
-                        <img src={paper} alt="paper" className={`addTrash__bins-img ${clickedID === 1 && "addTrash__bins-img-clicked"} `} onClick={event => handleClick(1)}/>
-                        <img src={bio} alt="bio"     className={`addTrash__bins-img bio ${clickedID === 2 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(2)}/>
-                        <img src={glass} alt="glass" className={`addTrash__bins-img ${clickedID === 3 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(3)}/>
-                        <img src={mixed} alt="mixed" className={`addTrash__bins-img ${clickedID === 4 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick( 4)}/>
-                        <img src={pet} alt="pet"     className={`addTrash__bins-img ${clickedID === 5 && "addTrash__bins-img-clicked"} `} onClick={event =>handleClick(5)}/>
+                        <div className={`addTrash__bins-bin ${clickedID === 1 && "binClicked"}`} onClick={event => handleClick(1)}>
+                            <FontAwesomeIcon icon={faScroll} alt="paper" id='paper' className='addTrash__bins-img icon'/>
+                            <p className='addTrash__bins-text desc'>Papier</p>
+                        </div>
+                        <div className={`addTrash__bins-bin bio ${clickedID === 2 && "binClicked"} `} onClick={event =>handleClick(2)}>
+                            <FontAwesomeIcon icon={faAppleAlt} alt="bio" id='bio' className='addTrash__bins-img icon'/>
+                            <p className='addTrash__bins-text desc'>Odpady biodegradowalne</p>
+                        </div>
+                        <div className={`addTrash__bins-bin ${clickedID === 3 && "binClicked"} `} onClick={event =>handleClick(3)}>
+                            <FontAwesomeIcon icon={faWineBottle} alt="glass" id='glass' className='addTrash__bins-img icon'/>
+                            <p className='addTrash__bins-text desc'>Szkło</p>
+                        </div>
+                        <div className={`addTrash__bins-bin ${clickedID === 4 && "binClicked"} `} onClick={event =>handleClick( 4)}>
+                            <FontAwesomeIcon icon={faTrash} alt="mixed" id='mixed' className='addTrash__bins-img icon'/>
+                            <p className='addTrash__bins-text desc'>Odpady zmieszane</p>
+                        </div>
+                        <div className={`addTrash__bins-bin ${clickedID === 5 && "binClicked"} `} onClick={event =>handleClick( 5)}>
+                            <GiOpenedFoodCan alt="pet" id='pet' className='addTrash__bins-img icon'/>
+                            <p className='addTrash__bins-text desc'>Metale i tworzywa sztuczne</p>
+                        </div>
                     </div>
 
-                    <button className="addTrash__button" onClick={handleSubmit}>Wyślij!</button>
+                    <button className="addTrash__button" onClick={handleSubmit}>Wyślij</button>
                         <p className="addTrash__error">{error}</p>
                         <p className="addTrash__success">{success}</p>
-                    <FontAwesomeIcon icon={faNewspaper}/>
+
                 </div>
         </section>
     )

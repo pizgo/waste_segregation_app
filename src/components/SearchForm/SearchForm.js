@@ -35,7 +35,6 @@ export const SearchForm = () => {
                         <p className="search__text text__header">Co chcesz wyrzucić?</p>
                         <input type="text" className="search__form" placeholder="Tu wpisz, co chcesz wyrzucić"
                                value={searchTerm} onChange={updateSearch} />
-
                         <ul className="search__list" style={{display: (selectedResult || !searchTerm ||
                                 (!filteredResults.length && searchTerm)) ? 'none' : 'block'}}>
                             {filteredResults.map((item, index) => (
