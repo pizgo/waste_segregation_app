@@ -35,6 +35,10 @@
     &::placeholder {
       color: $lightgreen;
     }
+
+    &:focus {
+      box-shadow: none;
+    }
   }
 
   &__list {
