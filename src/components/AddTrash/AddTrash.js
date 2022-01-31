@@ -31,7 +31,6 @@ export const AddTrash = () => {
     //adding binID
     const handleClick = (id) => {
         setBinID(id)
-        console.log({id})
         setClickedID(id);
     }
 
@@ -68,10 +67,10 @@ export const AddTrash = () => {
     return (
         <section className="addTrash">
                 <div className="addTrash__container">
-                    <p className="addTrash__hello">Jeśli chcesz uzupełnić naszą bazę, wpisz w poniżej rodzaj
-                    śmiecia, wybierz, do którego pojemnika należy go wyrzucić i kliknij "Wyślij".
-                    Zapoznamy się z Twoją sugestią i uzupełnimy bazę naszych śmieci.</p>
-
+                    <p className="addTrash__hello">
+                        Jeśli chcesz uzupełnić naszą bazę, wpisz w poniżej nazwę odpadu, wybierz, do którego pojemnika należy go wyrzucić i kliknij "Wyślij".
+                        Zapoznamy się z Twoją sugestią.
+                    </p>
                     <input type="text" className="addTrash__form" placeholder="Tu wpisz swoją sugestię" onChange={handleChange} />
                     <div className="addTrash__bins">
                         <img src={paper} alt="paper" className={`addTrash__bins-img ${clickedID === 1 && "addTrash__bins-img-clicked"} `} onClick={event => handleClick(1)}/>
