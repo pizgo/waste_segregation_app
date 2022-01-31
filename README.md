@@ -2,7 +2,7 @@
 
 The app help users with segregation of the daily garbage
 
-The app is available on  
+The app is available on https://waste-segregation-app-3c422.web.app/
 
 ####Current features:
 1. search through database
@@ -17,5 +17,5 @@ Libraries, frameworks and tools:
 1. JS ES6
 2. React
 3. Sass
-4.react-router
-5. Firebase (Firestore, Hosting, )
+4. react-router
+5. Firebase (Firestore, Hosting)
