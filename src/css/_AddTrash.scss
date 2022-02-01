@@ -51,7 +51,7 @@
   }
 
   &__bins {
-    margin-top: 40px;
+    margin-top: 20px;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -60,6 +60,10 @@
     align-items: center;
     padding: 0 20px;
 
+    @include tablet {
+      margin-top: 40px;
+    }
+
 
     @include desktop {
       margin-top: 60px;
@@ -67,14 +71,60 @@
 
     &-img {
       padding: 10px;
-      width: 60px;
+      width: 48px;
       height: auto;
+
+      @include tablet {
+        width: 60px;
+      }
+
+      @include desktop {
+        width: 60px;
+      }
     }
+    &-img.mixed {
+      width: 32px;
+      @include tablet {
+        width: 50px;
+      }
+
+      @include desktop {
+        width: 50px;
+      }
+    }
+    &-img.bio {
+      width: 40px;
+      @include tablet {
+        width: 50px;
+      }
+
+      @include desktop {
+        width: 50px;
+      }
+    }
+    &-img.pet {
+      width: 58px;
+      @include tablet {
+        width: 60px;
+      }
+
+      @include desktop {
+        width: 60px;
+      }
+    }
+
 
     &-text {
       text-align: center;
       margin-top: 10px;
       font-size: 1.3rem;
+
+      @include tablet {
+        font-size: 1.3rem;
+      }
+      @include desktop {
+        font-size: 1.3rem;
+      }
     }
   }
 
@@ -127,41 +177,92 @@
 
 .bin {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   padding: 0 50px;
   cursor: pointer;
 
+  @include tablet {
+    flex-direction: column;
+  }
+
+  @include desktop {
+    flex-direction: column;
+  }
+
   &:first-of-type {
-    @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    @include createBoxForAddingTrash(80vw, 90px, 10px, $background, 10px);
     position: relative;
-    box-shadow: 0 0 15px $paper;
+    box-shadow: 0 0 8px $paper;
     color: $paper;
+
+    @include tablet {
+      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+      box-shadow: 0 0 15px $paper;
+    }
+
+    @include desktop {
+      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+      box-shadow: 0 0 15px $paper;
+    }
   }
   &:nth-of-type(2) {
-    @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    @include createBoxForAddingTrash(80vw, 90px, 10px, $background, 10px);
     position: relative;
-    box-shadow: 0 0 15px $bio;
+    box-shadow: 0 0 8px $bio;
     color: $bio;
+
+    @include tablet {
+      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    }
+
+    @include desktop {
+      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    }
   }
   &:nth-of-type(3) {
-    @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    @include createBoxForAddingTrash(80vw, 90px, 10px, $background, 10px);
     position: relative;
-    box-shadow: 0 0 15px $glass;
+    box-shadow: 0 0 8px $glass;
     color: $glass;
+
+    @include tablet {
+      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    }
+
+    @include desktop {
+      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    }
   }
   &:nth-of-type(4) {
-    @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    @include createBoxForAddingTrash(80vw, 90px, 10px, $background, 10px);
     position: relative;
-    box-shadow: 0 0 15px $mixed;
+    box-shadow: 0 0 8px $mixed;
     color: $mixed;
+
+    @include tablet {
+      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    }
+
+    @include desktop {
+      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    }
+
   }
   &:nth-of-type(5) {
-    @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    @include createBoxForAddingTrash(80vw, 90px, 10px, $background, 10px);
     position: relative;
-    box-shadow: 0 0 15px $pet;
+    box-shadow: 0 0 8px $pet;
     color: $pet;
+
+    @include tablet {
+      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    }
+
+    @include desktop {
+      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    }
   }
 
   &__clicked {
@@ -198,15 +299,12 @@
   }
 }
 
-//#paper {
-//  color: $paper;
+
+//
+//#bio {
+//  width: 50px;
 //}
-#mixed {
-  width: 50px;
-}
-#bio {
-  width: 50px;
-}
+//#pet
 
 
 
