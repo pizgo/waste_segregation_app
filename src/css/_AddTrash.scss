@@ -116,17 +116,22 @@
       }
     }
 
-
     &-text {
-      text-align: center;
-      margin-top: 10px;
+      text-align: left;
       font-size: 1rem;
+      font-weight: bold;
 
       @include tablet {
         font-size: 1.3rem;
+        font-weight: normal;
+        margin-top: 10px;
+        text-align: center;
       }
       @include desktop {
         font-size: 1.3rem;
+        font-weight: normal;
+        margin-top: 10px;
+        text-align: center;
       }
     }
   }
@@ -182,20 +187,26 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding: 0 50px;
+  justify-content: flex-start;
+  padding: 0 20px;
   cursor: pointer;
+  margin: auto;
+  width: auto;
 
   @include tablet {
     flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
   }
 
   @include desktop {
     flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
   }
 
   &:first-of-type {
-    @include createBoxForAddingTrash(80vw, 90px, 10px, $background, 10px);
+    @include createBoxForAddingTrash(80vw, 70px, 10px, $background, 10px);
     position: relative;
     box-shadow: 0 0 8px $paper;
     color: $paper;
@@ -211,7 +222,7 @@
     }
   }
   &:nth-of-type(2) {
-    @include createBoxForAddingTrash(80vw, 90px, 10px, $background, 10px);
+    @include createBoxForAddingTrash(80vw, 70px, 10px, $background, 10px);
     position: relative;
     box-shadow: 0 0 8px $bio;
     color: $bio;
@@ -225,7 +236,7 @@
     }
   }
   &:nth-of-type(3) {
-    @include createBoxForAddingTrash(80vw, 90px, 10px, $background, 10px);
+    @include createBoxForAddingTrash(80vw, 70px, 10px, $background, 10px);
     position: relative;
     box-shadow: 0 0 8px $glass;
     color: $glass;
@@ -239,7 +250,7 @@
     }
   }
   &:nth-of-type(4) {
-    @include createBoxForAddingTrash(80vw, 90px, 10px, $background, 10px);
+    @include createBoxForAddingTrash(80vw, 70px, 10px, $background, 10px);
     position: relative;
     box-shadow: 0 0 8px $mixed;
     color: $mixed;
@@ -254,7 +265,7 @@
 
   }
   &:nth-of-type(5) {
-    @include createBoxForAddingTrash(80vw, 90px, 10px, $background, 10px);
+    @include createBoxForAddingTrash(80vw, 70px, 10px, $background, 10px);
     position: relative;
     box-shadow: 0 0 8px $pet;
     color: $pet;
