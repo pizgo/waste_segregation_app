@@ -22,7 +22,6 @@ body {
 .text__header {
   font-family: $text;
   font-size: 1.2rem;
-  font-weight: bold;
   line-height: 1.6rem;
 
   @include tablet {

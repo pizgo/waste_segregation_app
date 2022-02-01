@@ -148,10 +148,12 @@
       @include tablet {
         font-size: 1.1rem;
         width: auto;
+        font-weight: normal;
       }
       @include desktop {
         font-size: 1.3rem;
         width: auto;
+        font-weight: normal;
       }
     }
   }

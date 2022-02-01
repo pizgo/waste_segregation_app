@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import {getBinDict} from "../resources/BinDict";
 import  {getSearchResults} from "../resources/DataBase";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faScroll} from "@fortawesome/free-solid-svg-icons";
 
 
 export const SearchForm = () => {
@@ -50,6 +52,11 @@ export const SearchForm = () => {
                                 </span>  wyrzuć do pojemnika na <span className='search__result-element'>
                                     {getBinDict()[ selectedResult.binID ].title}.
                                 </span>
+
+                                {/*<div className='bin' style={{display: (selectedResult.binID === 1) ? 'block' : 'none'}}  >*/}
+                                {/*    <FontAwesomeIcon icon={faScroll} alt="paper" id='paper' className='addTrash__bins-img icon paper'/>*/}
+                                {/*    <p className='addTrash__bins-text desc paper'>Papier</p>*/}
+                                {/*</div>*/}
                             </p>
                             : null}
                         {(!filteredResults.length && searchTerm) && <p className="search__result-false">
