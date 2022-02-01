@@ -16,20 +16,25 @@
   &__text1 {
     margin-top: 60px;
     text-align: center;
-    padding: 0 40px;
+    padding: 0 20px;
     line-height: 30px;
+
+    @include tablet {
+      padding: 0 40px;
+    }
 
     @include desktop {
       margin-top: 90px;
       max-width: 50vw;
+      padding: 0 40px;
       line-height: 40px;
     }
   }
 
   &__text2 {
-    margin: 20px 0 40px 0;
+    margin-bottom: 20px;
     text-align: center;
-    padding: 0px 40px;
+    padding: 0 40px;
 
     @include tablet {
       margin-bottom: 80px;
@@ -74,15 +79,22 @@
     }
 
     &-box {
-      @include createBox(220px, 220px, 10px, $background, 20px);
+      @include createBox(80vw, 120px, 10px, $background, 10px);
       position: relative;
       box-shadow: 0 0 15px $green;
+      display: flex;
+
+      @include tablet {
+        @include createBox(220px, 220px, 10px, $background, 20px);
+      }
 
       @include desktop {
         @include createBox(300px, 300px, 10px, $background, 20px);
       }
 
-      &:hover {
+      &:hover,
+      &:active,
+      &:focus {
         background: linear-gradient(130deg, $hoverBgColor 0%, $hoverBgColor2 100%);
         box-shadow: none;
         color: white;
@@ -93,16 +105,24 @@
           transition: .3s all ease-in-out;
         }
       }
+
     }
 
     &-boxContent {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
-      padding: 15px;
+      margin: auto;
+      width: auto;
+
+      @include tablet {
+        flex-direction: column;
+        padding: 15px
+      }
 
       @include desktop {
+        flex-direction: column;
         padding: 40px 30px 30px 30px;
       }
     }
@@ -120,13 +140,20 @@
 
     &-text {
       color: $green;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      font-weight: bold;
       text-decoration: none;
-      text-align: center;
+      text-align: left;
       padding: 10px;
+      width: 70%;
 
+      @include tablet {
+        font-size: 1.1rem;
+        width: auto;
+      }
       @include desktop {
         font-size: 1.3rem;
+        width: auto;
       }
     }
   }

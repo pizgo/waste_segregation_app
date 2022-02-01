@@ -108,9 +108,15 @@
     text-decoration: none;
     color: $background;
     font-size: 1.2rem;
+    font-weight: bold;
+
+    @include tablet {
+      font-weight: normal;
+    }
 
     @include desktop {
       font-size: 1.3rem;
+      font-weight: normal;
     }
 
     &:hover {

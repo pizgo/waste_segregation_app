@@ -93,7 +93,7 @@ export const AddTrash = () => {
                             <FontAwesomeIcon icon={faWineBottle} alt="glass" id='glass' className='addTrash__bins-img icon glass'/>
                             <p className='addTrash__bins-text desc glass'>Szkło</p>
                         </div>
-                        <div className={`bin ${clickedID === 4 && "bin__clicked"} `} onClick={event =>handleClick( 4)}>
+                        <div className={`bin ${clickedID === 4 && 'bin__clicked'} `} onClick={event =>handleClick( 4)}>
                             <FontAwesomeIcon icon={faTrash} alt="mixed" id='mixed' className='addTrash__bins-img icon mixed'/>
                             <p className='addTrash__bins-text desc mixed'>Odpady zmieszane</p>
                         </div>

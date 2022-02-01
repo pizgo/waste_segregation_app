@@ -27,6 +27,15 @@
   transition: .3s all ease-in-out;
 }
 
+@mixin createBox($width, $height, $bRadius, $bgColor, $margin){
+  width: $width;
+  height: $height;
+  border-radius: $bRadius;
+  background-color: $bgColor;
+  margin: $margin;
+  transition: .3s all ease-in-out;
+}
+
 @mixin createBoxForAddingTrash($width, $height, $bRadius, $bgColor, $margin){
   width: $width;
   height: $height;
