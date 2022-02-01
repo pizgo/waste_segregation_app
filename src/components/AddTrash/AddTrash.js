@@ -81,25 +81,25 @@ export const AddTrash = () => {
                     </p>
                     <input type="text" className="addTrash__form" placeholder="Tu wpisz swoją sugestię" onChange={handleChange} />
                     <div className="addTrash__bins">
-                        <div className={`addTrash__bins-bin ${clickedID === 1 && "binClicked"}`} onClick={event => handleClick(1)}>
-                            <FontAwesomeIcon icon={faScroll} alt="paper" id='paper' className='addTrash__bins-img icon'/>
-                            <p className='addTrash__bins-text desc'>Papier</p>
+                        <div className={`bin ${clickedID === 1 && "bin__clicked"}`} onClick={event => handleClick(1)}>
+                            <FontAwesomeIcon icon={faScroll} alt="paper" id='paper' className='addTrash__bins-img icon paper'/>
+                            <p className='addTrash__bins-text desc paper'>Papier</p>
                         </div>
-                        <div className={`addTrash__bins-bin bio ${clickedID === 2 && "binClicked"} `} onClick={event =>handleClick(2)}>
-                            <FontAwesomeIcon icon={faAppleAlt} alt="bio" id='bio' className='addTrash__bins-img icon'/>
-                            <p className='addTrash__bins-text desc'>Odpady biodegradowalne</p>
+                        <div className={`bin bio ${clickedID === 2 && "bin__clicked"} `} onClick={event =>handleClick(2)}>
+                            <FontAwesomeIcon icon={faAppleAlt} alt="bio" id='bio' className='addTrash__bins-img icon bio'/>
+                            <p className='addTrash__bins-text desc bio'>Odpady biodegradowalne</p>
                         </div>
-                        <div className={`addTrash__bins-bin ${clickedID === 3 && "binClicked"} `} onClick={event =>handleClick(3)}>
-                            <FontAwesomeIcon icon={faWineBottle} alt="glass" id='glass' className='addTrash__bins-img icon'/>
-                            <p className='addTrash__bins-text desc'>Szkło</p>
+                        <div className={`bin ${clickedID === 3 && "bin__clicked"} `} onClick={event =>handleClick(3)}>
+                            <FontAwesomeIcon icon={faWineBottle} alt="glass" id='glass' className='addTrash__bins-img icon glass'/>
+                            <p className='addTrash__bins-text desc glass'>Szkło</p>
                         </div>
-                        <div className={`addTrash__bins-bin ${clickedID === 4 && "binClicked"} `} onClick={event =>handleClick( 4)}>
-                            <FontAwesomeIcon icon={faTrash} alt="mixed" id='mixed' className='addTrash__bins-img icon'/>
-                            <p className='addTrash__bins-text desc'>Odpady zmieszane</p>
+                        <div className={`bin ${clickedID === 4 && "bin__clicked"} `} onClick={event =>handleClick( 4)}>
+                            <FontAwesomeIcon icon={faTrash} alt="mixed" id='mixed' className='addTrash__bins-img icon mixed'/>
+                            <p className='addTrash__bins-text desc mixed'>Odpady zmieszane</p>
                         </div>
-                        <div className={`addTrash__bins-bin ${clickedID === 5 && "binClicked"} `} onClick={event =>handleClick( 5)}>
-                            <GiOpenedFoodCan alt="pet" id='pet' className='addTrash__bins-img icon'/>
-                            <p className='addTrash__bins-text desc'>Metale i tworzywa sztuczne</p>
+                        <div className={`bin ${clickedID === 5 && "bin__clicked"} `} onClick={event =>handleClick( 5)}>
+                            <GiOpenedFoodCan alt="pet" id='pet' className='addTrash__bins-img icon pet'/>
+                            <p className='addTrash__bins-text desc pet'>Metale i tworzywa sztuczne</p>
                         </div>
                     </div>
 

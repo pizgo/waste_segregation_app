@@ -61,30 +61,16 @@
     flex-wrap: wrap;
     align-items: center;
     padding: 0 20px;
-    color: $green;
+
 
     @include desktop {
       margin-top: 60px;
-    }
-
-    &-bin {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0 50px;
-      cursor: pointer;
-
-      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
-      position: relative;
-      box-shadow: 0 0 15px $green;
     }
 
     &-img {
       padding: 10px;
       width: 60px;
       height: auto;
-      color: $green;
     }
 
     &-text {
@@ -140,17 +126,83 @@
   }
 }
 
-.binClicked {
-    background: linear-gradient(130deg, $hoverBgColor 0%, $hoverBgColor2 100%);
-    box-shadow: none;
-    color: $background;
-  .icon,
-  .desc {
-    color: $background;
+
+.bin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+  cursor: pointer;
+
+  &:first-of-type {
+    @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    position: relative;
+    box-shadow: 0 0 15px $paper;
+    color: $paper;
+  }
+  &:nth-of-type(2) {
+    @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    position: relative;
+    box-shadow: 0 0 15px $bio;
+    color: $bio;
+  }
+  &:nth-of-type(3) {
+    @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    position: relative;
+    box-shadow: 0 0 15px $glass;
+    color: $glass;
+  }
+  &:nth-of-type(4) {
+    @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    position: relative;
+    box-shadow: 0 0 15px $mixed;
+    color: $mixed;
+  }
+  &:nth-of-type(5) {
+    @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+    position: relative;
+    box-shadow: 0 0 15px $pet;
+    color: $pet;
+  }
+
+  &__clicked {
+    .icon,
+    .desc {
+      color: $background;
+    }
+
+    &:first-of-type {
+      background: linear-gradient(130deg, $paper 0%, $paper 100%);
+      box-shadow: none;
+      color: $background;
+    }
+    &:nth-of-type(2) {
+      background: linear-gradient(130deg, $bio 0%, $bio 100%);
+      box-shadow: none;
+      color: $background;
+    }
+    &:nth-of-type(3) {
+      background: linear-gradient(130deg, $glass 0%, $glass 100%);
+      box-shadow: none;
+      color: $background;
+    }
+    &:nth-of-type(4) {
+      background: linear-gradient(130deg, $mixed 0%, $mixed 100%);
+      box-shadow: none;
+      color: $background;
+    }
+    &:nth-of-type(5) {
+      background: linear-gradient(130deg, $pet 0%, $pet 100%);
+      box-shadow: none;
+      color: $background;
+    }
   }
 }
 
-
+//#paper {
+//  color: $paper;
+//}
 #mixed {
   width: 50px;
 }
