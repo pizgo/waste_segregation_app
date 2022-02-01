@@ -1,9 +1,9 @@
-**###WasteSegregation app**
+**About**
 
-The app provides users with tools that help to segregate daily garbage.
+The app provides users with tools that help to segregate daily garbage: search engine which enable to check, where garbage should be thrown, and map of municipal waste collections (feature making in progress).
 The project is available on https://waste-segregation-app-3c422.web.app/.
 
-**####Current features:**
+**Current features:**
 1. by using the search engine, the user can check to which container he/she should throw garbage (paper, bio, plastic, glass or mixed).
 2. user can actively participate in creating the project's database, by adding new pairs "garbage's type - container's type".
 
