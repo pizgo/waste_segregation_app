@@ -50,7 +50,7 @@ export const SearchForm = () => {
                             <div className="search__result">
                                 <span className='search__result-element'>
                                   { selectedResult.title }:
-                                </span> wyrzuć do pojemnika na
+                                </span> wyrzuć do pojemnika na:
                                 {/*<span className='search__result-element'>*/}
                                 {/*    {getBinDict()[ selectedResult.binID ].title}.*/}
                                 {/*</span>*/}
@@ -86,10 +86,12 @@ export const SearchForm = () => {
                                 </div>
                             </div>
                             : null}
-                        {(!filteredResults.length && searchTerm) && <p className="search__result-false">
-                            Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę?
-                            <a href="/AddTrash"> Kliknij tutaj.</a>
-                        </p>}
+                        {(!filteredResults.length && searchTerm) && <div className="search__result-false">
+                            Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę? <br/>
+                            <div className='search__result-false-box'>
+                                <a href="/AddTrash"> Kliknij tutaj</a>
+                            </div>
+                        </div>}
 
 
                 </div>

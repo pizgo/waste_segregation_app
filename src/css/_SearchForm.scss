@@ -98,12 +98,14 @@
     @include tablet {
       font-size: 1.3rem;
       font-weight: bold;
+      margin-top: 40px;
     }
 
     @include desktop {
       max-width: 80%;
       font-size: 1.3rem;
       font-weight: bold;
+      margin-top: 40px;
     }
 
     &-element {
@@ -130,7 +132,7 @@
     &-false {
     margin-top: 30px;
     font-size: 1.1rem;
-    font-weight: bold;
+    text-align: center;
     max-width: 100%;
 
       @include tablet {
@@ -138,11 +140,19 @@
       }
       @include desktop {
         font-size: 1.3rem;
+        width: 80%;
+      }
+
+      &-box {
+        margin-top: 15px;
       }
 
       & a {
         text-decoration: none;
         color: $green;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 10px;
 
         &:hover {
           cursor: pointer;
@@ -156,6 +166,13 @@
 .bin__result {
   margin-top: 25px;
 
+  @include tablet {
+    margin-top: 35px;
+  }
+
+  @include desktop {
+    margin-top: 35px;
+  }
   &-box {
     display: flex;
     flex-direction: row;
@@ -183,7 +200,7 @@
       @include createBoxSearchForm(70vw, 60px, 10px, $paper, $background);
 
       @include tablet {
-        @include createBoxSearchForm(190px, 190px, 10px, $paper, $background)
+        @include createBoxSearchForm(170px, 170px, 10px, $paper, $background)
       }
 
       @include desktop {
@@ -195,7 +212,7 @@
       @include createBoxSearchForm(70vw, 60px, 10px, $bio, $background);
 
       @include tablet {
-        @include createBoxSearchForm(190px, 190px, 10px, $bio, $background)
+        @include createBoxSearchForm(170px, 170px, 10px, $bio, $background)
       }
 
       @include desktop {
@@ -206,7 +223,7 @@
       @include createBoxSearchForm(70vw, 60px, 10px, $glass, $background);
 
       @include tablet {
-        @include createBoxSearchForm(190px, 190px, 10px, $glass, $background)
+        @include createBoxSearchForm(170px, 170px, 10px, $glass, $background)
       }
 
       @include desktop {
@@ -218,7 +235,7 @@
       @include createBoxSearchForm(70vw, 60px, 10px, $mixed, $background);
 
       @include tablet {
-        @include createBoxSearchForm(190px, 190px, 10px, $mixed, $background)
+        @include createBoxSearchForm(170px, 170px, 10px, $mixed, $background)
       }
 
       @include desktop {
@@ -229,7 +246,7 @@
       @include createBoxSearchForm(70vw, 60px, 10px, $pet, $background);
 
       @include tablet {
-        @include createBoxSearchForm(190px, 190px, 10px, $pet, $background)
+        @include createBoxSearchForm(170px, 170px, 10px, $pet, $background)
       }
 
       @include desktop {
@@ -288,17 +305,14 @@
   &-desc {
     text-align: left;
     font-size: 1rem;
-    font-weight: bold;
 
     @include tablet {
       font-size: 1.3rem;
-      font-weight: normal;
       margin-top: 10px;
       text-align: center;
     }
     @include desktop {
       font-size: 1.3rem;
-      font-weight: normal;
       margin-top: 10px;
       text-align: center;
     }
