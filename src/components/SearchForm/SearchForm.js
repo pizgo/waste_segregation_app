@@ -46,18 +46,34 @@ export const SearchForm = () => {
                             ))}
                         </ul>
                         {selectedResult ?
-                            <p className="search__result">
+                            <div className="search__result">
                                 <span className='search__result-element'>
-                                  { selectedResult.title }
-                                </span>  wyrzuć do pojemnika na <span className='search__result-element'>
-                                    {getBinDict()[ selectedResult.binID ].title}.
-                                </span>
-
-                                {/*<div className='bin' style={{display: (selectedResult.binID === 1) ? 'block' : 'none'}}  >*/}
-                                {/*    <FontAwesomeIcon icon={faScroll} alt="paper" id='paper' className='addTrash__bins-img icon paper'/>*/}
-                                {/*    <p className='addTrash__bins-text desc paper'>Papier</p>*/}
-                                {/*</div>*/}
-                            </p>
+                                  { selectedResult.title }:
+                                </span> wyrzuć do pojemnika na
+                                {/*<span className='search__result-element'>*/}
+                                {/*    {getBinDict()[ selectedResult.binID ].title}.*/}
+                                {/*</span>*/}
+                                <div className='bin__result' style={{display: (selectedResult.binID === 1) ? 'block' : 'none'}}  >
+                                    <FontAwesomeIcon icon={faScroll} alt="paper" id='paperResult' className='bin__result-icon result__paper'/>
+                                    <p className='bin__result-desc result__paper'>Papier</p>
+                                </div>
+                                <div className='bin__result' style={{display: (selectedResult.binID === 2) ? 'block' : 'none'}}  >
+                                    <FontAwesomeIcon icon={faScroll} alt="bio" id='bioResult' className='bin__result-icon result__bio'/>
+                                    <p className='bin__result-desc result__bio'>Papier</p>
+                                </div>
+                                <div className='bin__result' style={{display: (selectedResult.binID === 3) ? 'block' : 'none'}}  >
+                                    <FontAwesomeIcon icon={faScroll} alt="glass" id='glassResult' className='bin__result-icon result__glass'/>
+                                    <p className='bin__result-desc result__glass'>Papier</p>
+                                </div>
+                                <div className='bin__result' style={{display: (selectedResult.binID === 4) ? 'block' : 'none'}}  >
+                                    <FontAwesomeIcon icon={faScroll} alt="mixed" id='mixedResult' className='bin__result-icon result__mixed'/>
+                                    <p className='bin__result-desc result__mixed'>Papier</p>
+                                </div>
+                                <div className='bin__result' style={{display: (selectedResult.binID === 5) ? 'block' : 'none'}}  >
+                                    <FontAwesomeIcon icon={faScroll} alt="pet" id='petResult' className='bin__result-icon result__pet'/>
+                                    <p className='bin__result-desc result__pet'>Papier</p>
+                                </div>
+                            </div>
                             : null}
                         {(!filteredResults.length && searchTerm) && <p className="search__result-false">
                             Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę?

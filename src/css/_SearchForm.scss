@@ -93,9 +93,11 @@
     font-weight: bold;
     line-height: 2.2rem;
     text-align: center;
+    
 
     @include desktop {
       max-width: 80%;
+      font-size: 1.3rem;
     }
 
     &-element {
@@ -127,8 +129,27 @@
         }
       }
     }
+  }
+}
 
+.bin__result {
 
+  &-icon {
+
+  }
+
+  &-desc {
+
+  }
+}
+
+.result {
+  &__paper,
+  &__bio,
+  &__glass,
+  &__mixed,
+  &__pet {
+    color: $background
   }
 }
 
