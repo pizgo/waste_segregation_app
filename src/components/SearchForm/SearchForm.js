@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import {getBinDict} from "../resources/BinDict";
 import  {getSearchResults} from "../resources/DataBase";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faScroll} from "@fortawesome/free-solid-svg-icons";
+import {faAppleAlt, faScroll, faTrash, faWineBottle} from "@fortawesome/free-solid-svg-icons";
+import {GiOpenedFoodCan} from 'react-icons/gi';
 
 
 export const SearchForm = () => {
@@ -53,25 +54,35 @@ export const SearchForm = () => {
                                 {/*<span className='search__result-element'>*/}
                                 {/*    {getBinDict()[ selectedResult.binID ].title}.*/}
                                 {/*</span>*/}
-                                <div className='bin__result' style={{display: (selectedResult.binID === 1) ? 'block' : 'none'}}  >
-                                    <FontAwesomeIcon icon={faScroll} alt="paper" id='paperResult' className='bin__result-icon result__paper'/>
-                                    <p className='bin__result-desc result__paper'>Papier</p>
+                                <div className='bin__result' style={{display: (selectedResult.binID === 1) ? 'block' : 'none'}}>
+                                    <div className='bin__result-box bin__result-paper'>
+                                        <FontAwesomeIcon icon={faScroll} alt="paper" id='paperResult' className='bin__result-icon paper'/>
+                                        <p className='bin__result-desc'>Papier</p>
+                                    </div>
                                 </div>
-                                <div className='bin__result' style={{display: (selectedResult.binID === 2) ? 'block' : 'none'}}  >
-                                    <FontAwesomeIcon icon={faScroll} alt="bio" id='bioResult' className='bin__result-icon result__bio'/>
-                                    <p className='bin__result-desc result__bio'>Papier</p>
+                                <div className='bin__result' style={{display: (selectedResult.binID === 2) ? 'block' : 'none'}}>
+                                    <div className=' bin__result-box bin__result-bio'>
+                                        <FontAwesomeIcon icon={faAppleAlt} alt="bio" id='bioResult' className='bin__result-icon bio'/>
+                                        <p className='bin__result-desc'>Bio</p>
+                                    </div>
                                 </div>
-                                <div className='bin__result' style={{display: (selectedResult.binID === 3) ? 'block' : 'none'}}  >
-                                    <FontAwesomeIcon icon={faScroll} alt="glass" id='glassResult' className='bin__result-icon result__glass'/>
-                                    <p className='bin__result-desc result__glass'>Papier</p>
+                                <div className='bin__result' style={{display: (selectedResult.binID === 3) ? 'block' : 'none'}}>
+                                    <div className='bin__result-box bin__result-glass'>
+                                        <FontAwesomeIcon icon={faWineBottle} alt="glass" id='glassResult' className='bin__result-icon glass'/>
+                                        <p className='bin__result-desc'>Szkło</p>
+                                    </div>
                                 </div>
-                                <div className='bin__result' style={{display: (selectedResult.binID === 4) ? 'block' : 'none'}}  >
-                                    <FontAwesomeIcon icon={faScroll} alt="mixed" id='mixedResult' className='bin__result-icon result__mixed'/>
-                                    <p className='bin__result-desc result__mixed'>Papier</p>
+                                <div className='bin__result' style={{display: (selectedResult.binID === 4) ? 'block' : 'none'}}>
+                                    <div className='bin__result-box bin__result-mixed'>
+                                        <FontAwesomeIcon icon={faTrash} alt="mixed" id='mixedResult' className='bin__result-icon mixed'/>
+                                        <p className='bin__result-desc'>Odpady zmieszane</p>
+                                    </div>
                                 </div>
-                                <div className='bin__result' style={{display: (selectedResult.binID === 5) ? 'block' : 'none'}}  >
-                                    <FontAwesomeIcon icon={faScroll} alt="pet" id='petResult' className='bin__result-icon result__pet'/>
-                                    <p className='bin__result-desc result__pet'>Papier</p>
+                                <div className='bin__result' style={{display: (selectedResult.binID === 5) ? 'block' : 'none'}}>
+                                    <div className='bin__result-box bin__result-pet'>
+                                        <GiOpenedFoodCan alt="pet" id='petResult' className='bin__result-icon pet'/>
+                                        <p className='bin__result-desc'>Metale i tworzywa sztuczne</p>
+                                    </div>
                                 </div>
                             </div>
                             : null}
@@ -79,6 +90,8 @@ export const SearchForm = () => {
                             Brak wyników wyszukiwania. Chcesz uzupełnić naszą bazę?
                             <a href="/AddTrash"> Kliknij tutaj.</a>
                         </p>}
+
+
                 </div>
             </section>
         </div>

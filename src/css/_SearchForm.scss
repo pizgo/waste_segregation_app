@@ -87,23 +87,34 @@
 
   &__result {
     max-width: 100%;
-    text-wrap: normal;
     margin-top: 30px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    line-height: 2.2rem;
+    font-size: 1.1rem;
     text-align: center;
-    
+
+    @include tablet {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
 
     @include desktop {
       max-width: 80%;
       font-size: 1.3rem;
+      font-weight: bold;
     }
 
     &-element {
       color: $green;
       text-transform: uppercase;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+
+      @include tablet {
+        font-size: 1.3rem;
+      }
+
+      @include desktop {
+        font-size: 1.3rem;
+      }
 
       &:last-of-type {
         text-transform: lowercase;
@@ -114,10 +125,16 @@
 
     &-false {
     margin-top: 30px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: bold;
     max-width: 100%;
 
+      @include tablet {
+        font-size: 1.3rem;
+      }
+      @include desktop {
+        font-size: 1.3rem;
+      }
 
       & a {
         text-decoration: none;
@@ -133,25 +150,105 @@
 }
 
 .bin__result {
+  margin-top: 15px;
+
+  &-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    cursor: pointer;
+    margin: auto;
+    width: auto;
+  }
+
+    &-paper {
+      @include createBoxSearchForm(80vw, 70px, 10px, $paper, $background);
+    }
+
+    &-bio {
+      @include createBoxSearchForm(80vw, 70px, 10px, $bio, $background);
+    }
+    &-glass {
+      @include createBoxSearchForm(80vw, 70px, 10px, $glass, $background);
+
+    }
+    &-mixed {
+      @include createBoxSearchForm(80vw, 70px, 10px, $mixed, $background);
+    }
+    &-pet{
+      @include createBoxSearchForm(80vw, 70px, 10px, $pet, $background);
+    }
 
   &-icon {
+    padding: 10px;
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    color: $background;
 
+    @include tablet {
+      width: 60px;
+      margin-right: 0;
+    }
+
+    @include desktop {
+      width: 60px;
+      margin-right: 0;
+    }
+  }
+  &-icon.mixed {
+    width: 28px;
+    @include tablet {
+      width: 50px;
+    }
+
+    @include desktop {
+      width: 50px;
+    }
+  }
+  &-icon.bio {
+    width: 35px;
+    @include tablet {
+      width: 50px;
+    }
+
+    @include desktop {
+      width: 50px;
+    }
+  }
+  &-icon.pet {
+    width: 54px;
+    @include tablet {
+      width: 60px;
+    }
+
+    @include desktop {
+      width: 60px;
+    }
   }
 
   &-desc {
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: bold;
 
+    @include tablet {
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin-top: 10px;
+      text-align: center;
+    }
+    @include desktop {
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin-top: 10px;
+      text-align: center;
+    }
   }
 }
 
-.result {
-  &__paper,
-  &__bio,
-  &__glass,
-  &__mixed,
-  &__pet {
-    color: $background
-  }
-}
 
 
 

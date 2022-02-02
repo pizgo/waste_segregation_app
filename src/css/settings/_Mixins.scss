@@ -36,11 +36,11 @@
   margin: $margin;
 }
 
-@mixin createBoxSearchForm($width, $height, $bRadius, $bgColor, $margin){
+@mixin createBoxSearchForm($width, $height, $bRadius, $bgColor, $color){
   width: $width;
   height: $height;
   border-radius: $bRadius;
   background-color: $bgColor;
-  margin: $margin;
+  color: $color;
 }
 

@@ -8,13 +8,6 @@ import {faWineBottle} from '@fortawesome/free-solid-svg-icons'
 import {faTrash} from '@fortawesome/free-solid-svg-icons'
 import {GiOpenedFoodCan} from 'react-icons/gi';
 
-// import paper from '../../assets/paper.jpg';
-// import bio from '../../assets/bio.jpg';
-// import glass from '../../assets/glass.jpg';
-// import mixed from '../../assets/mixed.jpg';
-// import pet from '../../assets/pet.jpg';
-
-
 
 export const AddTrash = () => {
 
@@ -24,8 +17,6 @@ export const AddTrash = () => {
     const [clickedID, setClickedID] = useState();
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
-
-
 
     //adding garbage.title
     const handleChange = e => {
