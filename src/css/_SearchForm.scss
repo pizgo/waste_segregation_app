@@ -150,7 +150,7 @@
 }
 
 .bin__result {
-  margin-top: 15px;
+  margin-top: 25px;
 
   &-box {
     display: flex;
@@ -164,21 +164,21 @@
   }
 
     &-paper {
-      @include createBoxSearchForm(80vw, 70px, 10px, $paper, $background);
+      @include createBoxSearchForm(70vw, 60px, 10px, $paper, $background);
     }
 
     &-bio {
-      @include createBoxSearchForm(80vw, 70px, 10px, $bio, $background);
+      @include createBoxSearchForm(70vw, 60px, 10px, $bio, $background);
     }
     &-glass {
-      @include createBoxSearchForm(80vw, 70px, 10px, $glass, $background);
+      @include createBoxSearchForm(70vw, 60px, 10px, $glass, $background);
 
     }
     &-mixed {
-      @include createBoxSearchForm(80vw, 70px, 10px, $mixed, $background);
+      @include createBoxSearchForm(70vw, 60px, 10px, $mixed, $background);
     }
     &-pet{
-      @include createBoxSearchForm(80vw, 70px, 10px, $pet, $background);
+      @include createBoxSearchForm(70vw, 60px, 10px, $pet, $background);
     }
 
   &-icon {
@@ -231,7 +231,7 @@
 
   &-desc {
     text-align: left;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
 
     @include tablet {
