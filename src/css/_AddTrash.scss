@@ -119,7 +119,6 @@
       font-size: 1.1rem;
 
       @include tablet {
-        font-size: 1.3rem;
         margin-top: 10px;
         text-align: center;
       }
@@ -144,7 +143,7 @@
     font-weight: bold;
 
     @include tablet {
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     @include desktop {
@@ -227,7 +226,7 @@
     color: $paper;
 
     @include tablet {
-      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+      @include createBoxForAddingTrash(160px, 160px, 10px, $background, 20px);
       box-shadow: 0 0 15px $paper;
     }
 
@@ -243,7 +242,7 @@
     color: $bio;
 
     @include tablet {
-      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+      @include createBoxForAddingTrash(160px, 160px, 10px, $background, 20px);
     }
 
     @include desktop {
@@ -257,7 +256,7 @@
     color: $glass;
 
     @include tablet {
-      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+      @include createBoxForAddingTrash(160px, 160px, 10px, $background, 20px);
     }
 
     @include desktop {
@@ -271,7 +270,7 @@
     color: $mixed;
 
     @include tablet {
-      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+      @include createBoxForAddingTrash(160px, 160px, 10px, $background, 20px);
     }
 
     @include desktop {
@@ -286,7 +285,7 @@
     color: $pet;
 
     @include tablet {
-      @include createBoxForAddingTrash(190px, 190px, 10px, $background, 20px);
+      @include createBoxForAddingTrash(160px, 160px, 10px, $background, 20px);
     }
 
     @include desktop {
@@ -327,13 +326,6 @@
     }
   }
 }
-
-
-//
-//#bio {
-//  width: 50px;
-//}
-//#pet
 
 
 
