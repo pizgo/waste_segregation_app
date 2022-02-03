@@ -19,11 +19,11 @@ export const App = () => {
                      <Route exact path="/SearchForm">
                         <SearchForm/>
                      </Route>
-                     <Route exact path="/CollectionMap">
-                         <CollectionMap/>
-                     </Route>
                      <Route exact path="/AddTrash">
                          <AddTrash/>
+                     </Route>
+                     <Route exact path="/CollectionMap">
+                         <CollectionMap/>
                      </Route>
                  </Switch>
              </div>
