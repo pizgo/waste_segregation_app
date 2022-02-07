@@ -38,7 +38,7 @@ export const Home = () => {
                                     </div>
                                 </div>
                             </NavLink>
-                            <NavLink  className='home__choice-link' to="/PszokMap">
+                            <NavLink  className='home__choice-link' to="/CollectionMap">
                                 <div className='home__choice-box'>
                                     <div className='home__choice-boxContent'>
                                         <BiMap className='home__choice-icon icon'/>
