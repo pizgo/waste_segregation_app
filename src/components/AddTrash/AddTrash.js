@@ -93,11 +93,10 @@ export const AddTrash = () => {
                     <button className="addTrash__button" onClick={handleSubmit}>Wyślij</button>
                         <p className="addTrash__error">{error}</p>
                         <p className="addTrash__success">{success}</p>
-
                 </div>
         </section>
     )
-}
+};
 
 
 

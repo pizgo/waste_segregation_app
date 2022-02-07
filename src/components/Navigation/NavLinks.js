@@ -51,6 +51,6 @@ const NavLinks = ({isMobile, closeMobileMenu}) => {
             </section>
         </div>
     )
-}
+};
 
 export default NavLinks;
