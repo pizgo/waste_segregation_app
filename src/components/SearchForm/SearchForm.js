@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {getBinDict} from "../resources/BinDict";
-import  {getSearchResults} from "../resources/DataBase";
+import {getSearchResults} from "../resources/DataBase";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAppleAlt, faScroll, faTrash, faWineBottle} from "@fortawesome/free-solid-svg-icons";
 import {GiOpenedFoodCan} from 'react-icons/gi';
@@ -51,9 +50,6 @@ export const SearchForm = () => {
                                 <span className='search__result-element'>
                                   { selectedResult.title }:
                                 </span> wyrzuć do pojemnika na:
-                                {/*<span className='search__result-element'>*/}
-                                {/*    {getBinDict()[ selectedResult.binID ].title}.*/}
-                                {/*</span>*/}
                                 <div className='bin__result' style={{display: (selectedResult.binID === 1) ? 'block' : 'none'}}>
                                     <div className='bin__result-box bin__result-paper'>
                                         <FontAwesomeIcon icon={faScroll} alt="paper" id='paperResult' className='bin__result-icon paper'/>
