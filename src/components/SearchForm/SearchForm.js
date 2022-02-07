@@ -88,13 +88,8 @@ export const SearchForm = () => {
                                 <a href="/AddTrash"> Kliknij tutaj</a>
                             </div>
                         </div>}
-
-
                 </div>
             </section>
         </div>
     );
 }
-
-
-

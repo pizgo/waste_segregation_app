@@ -8,10 +8,7 @@ const Navigation = () => {
         <nav className='desktopNavigation'>
             <NavLinks/>
         </nav>
-
     );
-
-
 }
 
 export default Navigation;

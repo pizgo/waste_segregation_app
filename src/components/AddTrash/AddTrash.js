@@ -8,9 +8,7 @@ import {faWineBottle} from '@fortawesome/free-solid-svg-icons'
 import {faTrash} from '@fortawesome/free-solid-svg-icons'
 import {GiOpenedFoodCan} from 'react-icons/gi';
 
-
 export const AddTrash = () => {
-
 
     const [garbageTitle, setGarbageTitle] = useState('');
     const [binID, setBinID] = useState();
@@ -37,8 +35,6 @@ export const AddTrash = () => {
     const handleSubmit = e => {
         e.preventDefault()
         //validation
-        console.log("bin ID")
-        console.log(binID)
         if(garbageTitle.length < 3)  {
             setError("Nazwa musi mieć minimum 3 litery. Spróbuj jeszcze raz");
             return;
