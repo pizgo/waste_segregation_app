@@ -23,10 +23,11 @@ export const CollectionMap = () => {
             <section className="map">
                 <div className="map__container">
                     <div className='map__text1 text__header'>
-                        Sprawdź, gdzie w Twojej okolicy znajdują się Punkty Selektywnego Zbierania Odpadów Komunalnych
+                        Sprawdź, gdzie w Twojej okolicy znajdują się Punkty Selektywnego Zbierania Odpadów Komunalnych.
                     </div>
-                    <div className='map__text2'>Kliknij w punkt na mapie, żeby sprawdzić adres i godziny otwarcia punktu</div>
-                    <MapContainer className='map__mapBox' style={{height: '400px', width:'60%' }} center={[52.229675, 21.012230]} zoom={10}>
+                    <div className='map__text2'>Kliknij w punkt na mapie, żeby sprawdzić
+                        adres i godziny otwarcia punktu.</div>
+                    <MapContainer className='map__mapBox' center={[52.229675, 21.012230]} zoom={10}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
@@ -36,15 +37,31 @@ export const CollectionMap = () => {
                                 <Popup className='map__popup-container'>
                                     <ul className='map__popup-list'>
                                         <li className='map__popup-listElement' key={index}>{item.name}</li>
-                                        <li className='map__popup-listElement' key={index}>{item.address}</li>
-                                        <p className='map__popup-listElement map__popup-p' key={index}>Godziny otwarcia: </p>
-                                        <li className='map__popup-listElement' key={index}>Poniedziałek: {item.monday}</li>
-                                        <li className='map__popup-listElement' key={index}>Wtorek: {item.tuesday}</li>
-                                        <li className='map__popup-listElement' key={index}>Środa: {item.wednesday}</li>
-                                        <li className='map__popup-listElement' key={index}>Czwartek: {item.thursday}</li>
-                                        <li className='map__popup-listElement' key={index}>Piątek: {item.friday}</li>
-                                        <li className='map__popup-listElement' key={index}>Sobota: {item.saturday}</li>
-                                        <li className='map__popup-listElement' key={index}>Niedziela: {item.sunday}</li>
+                                        <li className='map__popup-listElement' key={index}>
+                                            <span>Adres: </span>
+                                            {item.address}</li>
+                                        <p className='map__popup-listElement' key={index}>Godziny otwarcia: </p>
+                                        <li className='map__popup-listElement' key={index}>
+                                            <span>Poniedziałek: </span>
+                                            {item.monday}</li>
+                                        <li className='map__popup-listElement' key={index}>
+                                            <span>Wtorek: </span>
+                                            {item.tuesday}</li>
+                                        <li className='map__popup-listElement' key={index}>
+                                            <span>Środa: </span>
+                                            {item.wednesday}</li>
+                                        <li className='map__popup-listElement' key={index}>
+                                            <span>Czwartek: </span>
+                                            {item.thursday}</li>
+                                        <li className='map__popup-listElement' key={index}>
+                                            <span>Piątek: </span>
+                                            {item.friday}</li>
+                                        <li className='map__popup-listElement' key={index}>
+                                            <span>Sobota: </span>
+                                            {item.saturday}</li>
+                                        <li className='map__popup-listElement' key={index}>
+                                            <span>Niedziela: </span>
+                                            {item.sunday}</li>
                                     </ul>
                                 </Popup>
                             </Marker>))}
