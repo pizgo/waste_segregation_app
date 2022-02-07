@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {db} from "../resources/Firebase.js";
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faAppleAlt} from '@fortawesome/free-solid-svg-icons'
 import {faScroll} from '@fortawesome/free-solid-svg-icons'
