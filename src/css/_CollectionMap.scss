@@ -17,10 +17,9 @@
       max-width: 60vw;
     }
 
-    //@include desktop {
-    //  max-width: 50vw;
-    //  margin-top: 90px;
-    //}
+    @include desktop {
+      max-width: 50vw;
+    }
   }
 
   &__text1 {
@@ -29,6 +28,11 @@
 
     @include tablet {
       margin-bottom: 20px;
+    }
+
+    @include desktop {
+      margin-top: 90px;
+      margin-bottom: 30px;
     }
   }
 
@@ -41,6 +45,11 @@
       font-size: 1.2rem;
       margin-bottom: 60px;
     }
+
+    @include desktop {
+      font-size: 1.3rem;
+      margin-bottom: 60px;
+    }
   }
 
   &__mapBox {
@@ -51,20 +60,18 @@
     z-index: 0;
 
     @include tablet {
-      height: 600px;
+      height: 450px;
+      max-width: 70vw;
+    }
+
+    @include desktop {
+      height: 450px;
+      max-width: 60vw;
     }
   }
 
   &__popup {
-
-    &-container {
-
-    }
-
-    &-list {
-
-    }
-
+    
     &-listElement {
       list-style-type: none;
       font-size: 0.8rem;
