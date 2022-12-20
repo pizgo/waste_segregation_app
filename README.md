@@ -11,6 +11,7 @@ The project is available on https://waste-segregation-app-3c422.web.app/.
 
 **Plans for developement:**
 1. animated game - match garbage to the correct bin;
+2. improving the layout
 
 **Libraries, frameworks and tools:**
 1. JS ES6,
